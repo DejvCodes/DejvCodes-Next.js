@@ -86,7 +86,6 @@ section {
 .link a.active {
   color: var(--light-blue);
 }
-
 /* 
 @media (prefers-color-scheme: dark) {
   :root {
