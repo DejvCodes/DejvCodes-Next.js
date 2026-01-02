@@ -1,0 +1,104 @@
+@import 'tailwindcss';
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background: #000000;
+  --text-white: #FFFFFF;
+  --light-blue: #38BDF8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-light-blue: var(--light-blue);
+
+  --font-primary: 'Inter', sans-serif;
+
+  --max-width: 1350px;
+
+  --breakpoint-max-700: 700px;
+  --breakpoint-max-570: 570px;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--text-white);
+  background: var(--background);
+  font-family: var(--font-primary);
+}
+section {
+  height: 100vh !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: left !important;
+}
+/* ----- DOT ANIMATION ----- */
+@keyframes span-dotAnimation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.animate-dot {
+  animation: span-dotAnimation 2000ms infinite;
+}
+/* ----- MOBILE MENU LINK FADE-IN ----- */
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.one-link {
+  opacity: 0;
+}
+.one-link.fade {
+  animation: navLinkFade 0.5s ease forwards;
+  animation-delay: calc(var(--i) * 0.1s);
+}
+/* ----- LINK ANIMATION ----- */
+.link a {
+  position: relative;
+  transition: all 0.2s linear;
+}
+.link a:hover {
+  color: var(--light-blue); 
+}
+.link a::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 2.5px;
+  left: 50%;
+  bottom: -18px;
+  background: var(--light-blue);
+  border-radius: 20px;
+  transition: all 0.2s ease-out, left 0.2s ease-out;
+}
+.link a:hover:after,
+.link a.active::after {
+  width: 100%;
+  left: 0;
+  bottom: -6px;
+}
+.link a.active {
+  color: var(--light-blue);
+}
+
+/* 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ededed;
+  }
+} 
+*/
