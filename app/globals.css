@@ -3,25 +3,19 @@
 html {
   scroll-behavior: smooth;
 }
-
 :root {
   --background: #000000;
   --text-white: #FFFFFF;
   --light-blue: #38BDF8;
 }
-
 @theme inline {
   --color-background: var(--background);
   --color-light-blue: var(--light-blue);
-
   --font-primary: 'Inter', sans-serif;
-
   --max-width: 1350px;
-
   --breakpoint-max-700: 700px;
   --breakpoint-max-570: 570px;
 }
-
 * {
   box-sizing: border-box;
 }
@@ -33,7 +27,6 @@ body {
   font-family: var(--font-primary);
 }
 section {
-  height: 100vh !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: left !important;

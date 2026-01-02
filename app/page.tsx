@@ -7,11 +7,11 @@ const Home = () => {
   return <div>
     <Navbar />
     <main>
-      <section id='home'style={{backgroundImage: 'url("/background-1.png")'}}></section>
-       <section id='about'></section>
-       <section id='skills'></section>
-        <section id='projects'></section>
-        <section id='contact'></section>
+      <section id='home' className='h-screen' style={{backgroundImage: 'url("/background-1.png")'}}></section>
+       <section id='about' className='h-screen'></section>
+       <section id='skills' className='h-screen'></section>
+        <section id='projects' className='h-screen'></section>
+        <section id='contact' className='h-screen'></section>
     </main>
   </div>
 }
