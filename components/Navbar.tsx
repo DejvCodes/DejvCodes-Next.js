@@ -46,13 +46,13 @@ const Navbar = () => {
       <div className='py-2 mb-0.5 cursor-pointer font-primary'>
         <Link
           href='#home'
-          className='flex items-center text-white text-2xl font-bold font-primary'
+          className='relative flex items-center text-white text-2xl font-bold font-primary'
         >
-          <div className='bg-light-blue/10 p-2 rounded-lg mr-2'>
+          <div className='bg-light-blue/15 p-2 rounded-lg mr-2'>
             <Code2 className='h-6 w-6 text-light-blue' />
           </div>
           Dejv<span className='text-light-blue'>Codes</span>
-          <span className='animate-dot'>.</span>
+          <span className='animate-dot absolute bottom-1 right-[-8px] text-3xl'>.</span>
         </Link>
       </div>
 
