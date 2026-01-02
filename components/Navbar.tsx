@@ -7,16 +7,18 @@ import {useEffect, useState} from 'react';
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
   const handleOpenMenu = () => {
     setOpenMenu(!openMenu);
-  };
+  }
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('section');
       let currentSection = '';
+      setScrolled(window.scrollY > 7);
 
       sections.forEach((oneSection) => {
         const sectionTop = (oneSection as HTMLElement).offsetTop;
@@ -36,7 +38,7 @@ const Navbar = () => {
 
   return <header
     id='header'
-    className='fixed top-0 left-0 w-full h-17 max-570:h-22 bg-background shadow-[0_0_25px_rgba(0,0,0,0.9)] flex items-center justify-center z-1000'
+    className={`fixed top-0 left-0 w-full bg-background shadow-[0_0_25px_rgba(0,0,0,0.9)] flex items-center justify-center transition-all duration-300 z-1000 h-18 ${scrolled ? 'md:h-17' : 'md:h-25'}`}
   >
      <div className='w-full max-w-(--max-width) h-full flex items-center justify-between px-4 md:px-6 lg:px-12'>
 
@@ -88,8 +90,7 @@ const Navbar = () => {
             const sectionId = path.replace('#', '');
             const isActive = activeSection === sectionId;
             
-            return <li
-              key={id}
+            return <li key={id}
               className={`link one-link list-none text-center ${openMenu ? 'fade' : ''}`}
               style={{ '--i': id } as React.CSSProperties}
               onClick={() => openMenu && handleOpenMenu()}
