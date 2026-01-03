@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "postbuild": "cp public/404.html out/404.html && cp .htaccess out/.htaccess",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
