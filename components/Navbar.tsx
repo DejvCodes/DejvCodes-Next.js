@@ -1,5 +1,4 @@
 'use client';
-
 import Link from 'next/link';
 import {Code2} from 'lucide-react';
 import {NAV_LINKS} from '@/constants';
