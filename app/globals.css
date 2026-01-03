@@ -8,10 +8,12 @@ html {
   --background: #000000;
   --text-white: #FFFFFF;
   --light-blue: #38BDF8;
+  --slate-960: #030507; 
 }
 @theme inline {
   --color-background: var(--background);
   --color-light-blue: var(--light-blue);
+  --color-slate-960: var(--slate-960);
   --font-primary: 'Inter', sans-serif;
   --max-width: 1370px;
   --breakpoint-max-700: 700px;
