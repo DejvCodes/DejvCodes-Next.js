@@ -9,11 +9,36 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://dejvcodes.com'),
   title: 'DejvCodes - David Kalmus',
-  description: 'DejvCodes je značka zaměřená na tvorbu moderních webových stránek na míru pomocí čistého kódu. Stavím rychlé, responzivní a přehledné weby, které vypadají skvěle a zároveň jsou optimalizované pro výkon a SEO. Od návrhu až po realizaci dotahuju detaily, které posouvají web na vyšší level.',
+  description:
+    'DejvCodes je značka zaměřená na tvorbu moderních webových stránek na míru pomocí čistého kódu. Stavím rychlé, responzivní a přehledné weby, které vypadají skvěle a zároveň jsou optimalizované pro výkon a SEO. Od návrhu až po realizaci dotahuju detaily, které posouvají web na vyšší level.',
   icons: {
-    icon: 'app/favicon.ico',
-  }
+    icon: '/favicon.ico',
+  },
+  openGraph: {
+    title: 'DejvCodes - David Kalmus',
+    description:
+      'DejvCodes je značka zaměřená na tvorbu moderních webových stránek na míru pomocí čistého kódu. Stavím rychlé, responzivní a přehledné weby, které vypadají skvěle a zároveň jsou optimalizované pro výkon a SEO.',
+    siteName: 'DejvCodes',
+    url: 'https://dejvcodes.com',
+    type: 'website',
+    images: [
+      {
+        url: '/og.png', // dej do public/og.png
+        width: 1200,
+        height: 630,
+        alt: 'DejvCodes',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DejvCodes - David Kalmus',
+    description:
+      'DejvCodes je značka zaměřená na tvorbu moderních webových stránek na míru pomocí čistého kódu.',
+    images: ['/og.png'],
+  },
 };
 
 export default function RootLayout({
