@@ -11,6 +11,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'DejvCodes - David Kalmus',
   description: 'DejvCodes je značka zaměřená na tvorbu moderních webových stránek na míru pomocí čistého kódu. Stavím rychlé, responzivní a přehledné weby, které vypadají skvěle a zároveň jsou optimalizované pro výkon a SEO. Od návrhu až po realizaci dotahuju detaily, které posouvají web na vyšší level.',
+  icons: {
+    icon: 'app/favicon.ico',
+  }
 };
 
 export default function RootLayout({
@@ -20,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       <body className={`${inter.variable} antialiased`}>
         {children}
       </body>
