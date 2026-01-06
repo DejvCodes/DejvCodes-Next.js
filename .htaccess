@@ -8,6 +8,13 @@
 # dalsi info a priklady: https://kb.wedos.com/cs/webhosting/htaccess/htaccess-na-webhostingu
 
 RewriteEngine On
+# presmerovani na https
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# presmerovani z www.dejvcodes.com na dejvcodes.com
+RewriteCond %{HTTP_HOST} ^www\.dejvcodes\.com$ [NC]
+RewriteRule ^(.*)$ https://dejvcodes.com/$1 [L,R=301]
 
 # cele domeny (aliasy)
 RewriteCond %{REQUEST_URI} !^domains/
