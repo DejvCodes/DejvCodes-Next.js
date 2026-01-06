@@ -7,3 +7,9 @@ export const NAV_LINKS: NavLink[] = [
   { id: 4, path: "#projects", text: "Projects" },
   { id: 5, path: "#contact", text: "Contact" },
 ];
+
+export const HERO_CONTENT = {
+  name: "DejvCodes",
+  role: "Medior Front-end Developer",
+  description: "I design and build websites, apps, and interfaces that turn ideas into clean, high-performing experiences with sharp UI and real-world usability."
+};
