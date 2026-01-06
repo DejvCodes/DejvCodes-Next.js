@@ -1,12 +1,14 @@
 'use client';
+import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
+import StarfieldBG from '@/components/StarfieldBG';
 
 const Home = () => {
-
   return <>
     <Navbar />
     <main>
-      <section id='home' className='h-screen bg-linear-to-b from-black via-slate-960 to-slate-950'></section>
+      <Hero />
+      <StarfieldBG />
       <section id='about' className='h-screen bg-slate-900/30'></section> 
       <section id='skills' className='h-screen bg-slate-900/30'></section>
       <section id='projects' className='h-screen bg-slate-900/30'></section>
