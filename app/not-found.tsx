@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function Custom404() {
+const NotFound = () => {
   return (
     <div className='min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-slate-900'>
       <div className='text-center px-4'>
@@ -21,3 +21,5 @@ export default function Custom404() {
     </div>
   )
 }
+
+export default NotFound
