@@ -18,6 +18,8 @@ html {
   --max-width: 1370px;
   --breakpoint-max-700: 700px;
   --breakpoint-max-570: 570px;
+  --text-3\.5xl: 2rem;
+  --text-3\.5xl--line-height: 2.375rem;
 }
 * {
   box-sizing: border-box;
