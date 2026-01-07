@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
     <div className="relative max-w-7xl text-center mx-auto px-4 sm:px-6 lg:px-8 z-10">
       <div className="inline-block mb-3 sm:mb-6 px-4 py-1.5 rounded-full bg-slate-900/10 backdrop-blur-sm animate-fade-in-down">
         <span className="text-sm sm:text-xl xl:text-base font-medium bg-linear-to-r from-light-blue to-purple-400 bg-clip-text text-transparent">
-          Available for freelance projects
+          {HERO_CONTENT.badge}
         </span>
       </div>
     
@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
           href="#projects" 
           className="w-60! flex items-center justify-center sm:w-auto px-8 py-3 bg-light-blue text-slate-950 font-semibold rounded-xl hover:bg-slate-200 transition-all gap-2 group"
         >
-          View My Work    
+          {HERO_CONTENT.viewWorkButton}
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </Link>
         <Link
@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
           className="w-60! flex items-center justify-center sm:w-auto px-8 py-3 bg-slate-900/50 text-white font-semibold rounded-xl border border-slate-700 hover:bg-slate-800 transition-all gap-2"
         >
           <ArrowDown className="w-4 h-4" />
-          My Skills
+          {HERO_CONTENT.skillsButton}
         </Link>
       </div>
     </div>
