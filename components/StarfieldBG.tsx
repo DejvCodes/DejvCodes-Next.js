@@ -1,6 +1,6 @@
-"use client";
-import * as THREE from "three";
-import {useEffect, useRef} from "react";
+'use client';
+import * as THREE from 'three';
+import {useEffect, useRef} from 'react';
 
 export default function StarfieldBG() {
   const mountRef = useRef<HTMLDivElement | null>(null);
@@ -35,7 +35,7 @@ export default function StarfieldBG() {
     }
 
     const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
     const material = new THREE.PointsMaterial({
       color: 0xffffff,
@@ -75,7 +75,7 @@ export default function StarfieldBG() {
       points.rotation.x += 0.0004;
 
       // fake “let dopředu”: posouváme body v z a recyklujeme
-      const pos = geometry.getAttribute("position") as THREE.BufferAttribute;
+      const pos = geometry.getAttribute('position') as THREE.BufferAttribute;
       for (let i = 0; i < count; i++) {
         const zIndex = i * 3 + 2;
         pos.array[zIndex] = (pos.array[zIndex] as number) + speed;
@@ -103,16 +103,14 @@ export default function StarfieldBG() {
     };
   }, []);
 
-  return (
-    <div
-      ref={mountRef}
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 0,
-        background: "transparent",
-        opacity: 0.7,
-      }}
-    />
-  );
+  return <div
+    ref={mountRef}
+    style={{
+      position: 'absolute',
+      inset: 0,
+      zIndex: 0,
+      background: 'transparent',
+      opacity: 0.7,
+    }}
+  />
 }
