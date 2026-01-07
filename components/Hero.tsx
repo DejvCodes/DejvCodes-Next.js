@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
   >
     <div className="relative max-w-7xl text-center mx-auto px-4 sm:px-6 lg:px-8 z-10">
       <div className="inline-block mb-3 sm:mb-6 px-4 py-1.5 rounded-full bg-slate-900/10 backdrop-blur-sm animate-fade-in-down">
-        <span className="text-sm sm:text-xl xl:text-base font-medium bg-linear-to-r from-light-blue to-purple-400 bg-clip-text text-transparent">
+        <span className="text-sm sm:text-xl xl:text-base font-medium bg-linear-to-r from-light-blue to-purple-500 bg-clip-text text-transparent">
           {HERO_CONTENT.badge}
         </span>
       </div>
