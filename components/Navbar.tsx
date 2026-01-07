@@ -37,7 +37,10 @@ const Navbar = () => {
 
   return <header
     id='header'
-    className={`fixed top-0 left-0 w-full bg-background flex items-center justify-center transition-all duration-300 z-1000 h-18 ${scrolled ? 'md:h-17' : 'md:h-25'}`}
+    className={`
+      fixed top-0 left-0 w-full flex items-center justify-center transition-all duration-300 z-1000 h-18 
+      ${scrolled ? 'md:h-17 bg-slate-950/50 backdrop-blur-xl border-b border-slate-800' : 'bg-background md:h-25'}
+    `}
   >
      <div className='w-full max-w-(--max-width) h-full flex items-center justify-between px-4 md:px-6 lg:px-17'>
 
