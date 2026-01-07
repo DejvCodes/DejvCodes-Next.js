@@ -1,4 +1,4 @@
-import React from 'react';
+'use client';
 import Link from 'next/link';
 import {HERO_CONTENT} from '../constants';
 import {ArrowRight, ArrowDown} from 'lucide-react';
@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
       </h1>
         
       <p 
-        className="max-w-2xl mx-auto text-sm md:text-xl text-slate-400 mb-6 sm:mb-10 leading-relaxed animate-fade-in-up" 
+        className="max-w-2xl mx-auto text-sm md:text-xl text-slate-300 mb-6 sm:mb-10 leading-relaxed animate-fade-in-up" 
         style={{ animationDelay: '0.2s', animationFillMode: 'backwards' }}
       >
         {HERO_CONTENT.description}
