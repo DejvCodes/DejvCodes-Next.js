@@ -1,5 +1,6 @@
 'use client';
 import Hero from '@/components/Hero';
+import About from '@/components/About';
 import Navbar from '@/components/Navbar';
 import StarfieldBG from '@/components/StarfieldBG';
 
@@ -9,7 +10,7 @@ const Home = () => {
     <main>
       <Hero />
       <StarfieldBG />
-      <section id='about' className='h-screen bg-slate-900/30'></section> 
+      <About />
       <section id='skills' className='h-screen bg-slate-900/30'></section>
       <section id='projects' className='h-screen bg-slate-900/30'></section>
       <section id='contact' className='h-screen bg-slate-900/30'></section>
