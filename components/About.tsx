@@ -86,7 +86,7 @@ const About: React.FC = () => {
                       <Icon className='w-4 h-4 text-light-blue' />
                       <span className='text-slate-300 text-sm'>{item.label}</span>
                     </div>
-                    <span className='text-[11px] uppercase text-slate-500'>{item.value}</span>
+                    <span className='text-[12px] uppercase text-slate-500'>{item.value}</span>
                   </div>
                   <div className='h-2 bg-slate-800 rounded-full overflow-hidden relative'>
                     <div 
