@@ -12,7 +12,7 @@ export const HERO_CONTENT: HeroContent = {
   badge: 'Available for freelance projects',
   name: 'DejvCodes',
   role: 'Medior Front-end Developer',
-  description: 'I design and build websites, apps, and interfaces that turn ideas into clean, high-performing experiences with sharp UI and real-world usability.',
+  description: 'I design and build websites, apps and interfaces that turn ideas into clean, high-performing experiences with sharp UI and real-world usability.',
   viewWorkButton: 'View My Work',
   skillsButton: 'My Skills'
 };
@@ -57,7 +57,7 @@ export const EXPERIENCE: Experience[] = [
     role: 'Front-end Developer',
     company: '',
     period: '2025 - Present',
-    description: 'Building an e-commerce web app for online stores with Vue 3, Nuxt 3 and TypeScript. Refactoring and optimizing the codebase, shipping features, integrating GraphQL via Apollo, writing Cypress tests and collaborating on UI/UX.'
+    description: 'Building an e-commerce web app for e-shops with Vue 3, Nuxt 3, TypeScript, and Tailwind CSS. Refactoring and optimizing the codebase, shipping features, integrating GraphQL via Apollo and collaborating on UI/UX.'
   },
   {
     id: '3',
