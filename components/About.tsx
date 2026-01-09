@@ -46,7 +46,7 @@ const About: React.FC = () => {
           <div className='relative h-full flex flex-col justify-between bg-slate-950 border border-slate-800 rounded-3xl hover:border-slate-700 transition-colors overflow-hidden group p-7 md:p-8'>
             <div className='absolute top-0 right-0 p-32 bg-light-blue/12 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-light-blue/20 transition-all'></div>
             <div>
-              <div className='flex items-center text-light-blue gap-2 mb-1'>
+              <div className='flex items-center text-light-blue gap-2 mb-3'>
                 <Globe className='w-5 h-5' />
                 <span className='font-medium'>Based in</span>
               </div>
