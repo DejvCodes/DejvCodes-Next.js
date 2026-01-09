@@ -69,7 +69,13 @@ const Navbar = () => {
               return <li key={id} className='link group relative list-none'>
                 <Link
                   href={path}
+                  scroll={false}
                   className={`relative px-2 text-lg font-medium ${isActive ? 'active' : ''}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector(path)?.scrollIntoView({ behavior: 'smooth' });
+                    history.replaceState(null, "", path); // Update URL without reloading
+                  }}
                 >
                   {text}
                 </Link>
