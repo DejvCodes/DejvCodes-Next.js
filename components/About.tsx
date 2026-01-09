@@ -44,7 +44,7 @@ const About: React.FC = () => {
         {/* Stats Box */}
         <ScrollReveal delay={200}>
           <div className='relative h-full flex flex-col justify-between bg-slate-950 border border-slate-800 rounded-3xl hover:border-slate-700 transition-colors overflow-hidden group p-7 md:p-8'>
-            <div className='absolute top-0 right-0 p-32 bg-light-blue/10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-light-blue/20 transition-all'></div>
+            <div className='absolute top-0 right-0 p-32 bg-light-blue/12 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-light-blue/20 transition-all'></div>
             <div>
               <div className='flex items-center text-light-blue gap-2 mb-1'>
                 <Globe className='w-5 h-5' />
@@ -106,15 +106,15 @@ const About: React.FC = () => {
               <Briefcase className='w-6 h-6 text-light-blue' />
               <h3 className='text-xl font-bold text-white'>Work History</h3>
             </div>
-            <div className='space-y-7'>
+            <div className='space-y-5 md:space-y-8'>
               {EXPERIENCE.map((job) => (
                 <div key={job.id} className='relative pl-4 md:pl-8 border-l border-slate-800 last:border-0'>
                   <div className='absolute -left-1.25 top-2 w-2.5 h-2.5 bg-light-blue rounded-full'></div>
                   <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1.5'>
                     <h4 className='text-white text-lg font-bold'>{job.role}</h4>
-                    <span className='hidden sm:block w-34 text-xs sm:text-sm font-mono text-light-blue text-center bg-light-blue/10 px-2 py-1 rounded whitespace-nowrap'>{job.period}</span>
+                    <span className='w-fit text-xs sm:text-sm font-mono text-light-blue text-center bg-light-blue/10 px-2 py-1 mt-1.5 sm:mt-0 rounded whitespace-nowrap'>{job.period}</span>
                   </div>
-                  <p className='text-slate-300 text-[12px] font-medium mb-1'>{job.company}</p>
+                  <p className='hidden sm:block text-slate-300 text-[12px] font-medium mb-1'>{job.company}</p>
                   <p className='text-slate-500 text-[13px] leading-relaxed'>{job.description}</p>
                 </div>
               ))}
