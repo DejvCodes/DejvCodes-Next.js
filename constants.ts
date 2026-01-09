@@ -22,7 +22,7 @@ const yearOfExperience: number = new Date().getFullYear() - 2023;
 export const BIO_BOX: BioBox = {
   title: 'Engineering Philosophy',
   paragraphs: [
-    'DejvCodes is my personal brand focused on building modern, custom websites and web apps with clean, well-structured code. I create fast, responsive experiences that look great, feel smooth, and are optimized for performance and SEO.',
+    'DejvCodes is my personal brand focused on building modern, custom websites and web apps with clean, well-structured code. I create fast, responsive experiences that look great, feel smooth and are optimized for performance and SEO.',
     `${yearOfExperience}+ years of front-end experience - clean code, sharp UI, real-world results.`
   ]
 }
@@ -55,9 +55,9 @@ export const EXPERIENCE: Experience[] = [
   {
     id: '2',
     role: 'Front-end Developer',
-    company: '',
+    company: 'Conviu s.r.o.',
     period: '2025 - Present',
-    description: 'Building an e-commerce web app for e-shops with Vue 3, Nuxt 3, TypeScript, and Tailwind CSS. Refactoring and optimizing the codebase, shipping features, integrating GraphQL via Apollo and collaborating on UI/UX.'
+    description: 'Building an e-commerce web app for e-shops with Vue 3, Nuxt 3, TypeScript and Tailwind CSS. Refactoring and optimizing the codebase, shipping features, integrating GraphQL via Apollo and collaborating on UI/UX.'
   },
   {
     id: '3',
