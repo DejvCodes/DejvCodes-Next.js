@@ -105,7 +105,13 @@ const Navbar = () => {
             >
               <Link 
                 href={path} 
+                scroll={false}
                 className={`relative px-2 text-xl font-medium ${isActive ? 'active' : ''}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector(path)?.scrollIntoView({ behavior: 'smooth' });
+                  history.replaceState(null, "", path); // Update URL without reloading
+                }}
               >
                 {text}
               </Link>
