@@ -48,7 +48,13 @@ const Navbar = () => {
       <div className='py-2 mb-0.5 cursor-pointer font-primary'>
         <Link
           href='#home'
+          scroll={false} 
           className='relative flex items-center text-white text-2xl font-bold font-primary'
+          onClick={(e) => {
+            e.preventDefault();
+            document.querySelector('#home')?.scrollIntoView({ behavior: 'smooth' });
+            history.replaceState(null, "", '#home'); // Update URL without reloading
+          }}
         >
           <div className='bg-light-blue/12 p-2 rounded-lg mr-2'>
             <Code2 className='h-6 w-6 text-light-blue' />
