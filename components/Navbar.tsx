@@ -38,14 +38,14 @@ const Navbar = () => {
   return <header
     id='header'
     className={`
-      fixed top-0 left-0 w-full flex items-center justify-center transition-all duration-300 z-1000 h-18 
-      ${scrolled ? 'md:h-17 bg-slate-950/50 backdrop-blur-xl border-b border-slate-800' : 'bg-background md:h-25'}
+      fixed top-0 left-0 w-full h-18 flex items-center justify-center transition-all border-slate-800 duration-300 z-1000 
+      ${scrolled ? 'md:h-17 bg-slate-950/70 backdrop-blur-xl border-b' : 'bg-background md:h-25'}
     `}
   >
      <div className='w-full max-w-(--max-width) h-full flex items-center justify-between px-4 md:px-6 lg:px-17'>
 
       {/* Logo */}
-      <div className='py-2 mb-0.5 cursor-pointer font-primary'>
+      <div className='font-primary py-2 mb-0.5 cursor-pointer'>
         <Link
           href='#home'
           scroll={false} 
@@ -53,10 +53,10 @@ const Navbar = () => {
           onClick={(e) => {
             e.preventDefault();
             document.querySelector('#home')?.scrollIntoView({ behavior: 'smooth' });
-            history.replaceState(null, "", '#home'); // Update URL without reloading
+            history.replaceState(null, '', '#home'); // Update URL without reloading
           }}
         >
-          <div className='bg-light-blue/12 p-2 rounded-lg mr-2'>
+          <div className='bg-light-blue/12 rounded-lg p-2 mr-2'>
             <Code2 className='h-6 w-6 text-light-blue' />
           </div>
           Dejv<span className='text-light-blue'>Codes</span>
@@ -71,7 +71,6 @@ const Navbar = () => {
             const { id, path, text } = oneLink;
             const sectionId = path.replace('#', '');
             const isActive = activeSection === sectionId;
-              
               return <li key={id} className='link group relative list-none'>
                 <Link
                   href={path}
@@ -80,7 +79,7 @@ const Navbar = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     document.querySelector(path)?.scrollIntoView({ behavior: 'smooth' });
-                    history.replaceState(null, "", path); // Update URL without reloading
+                    history.replaceState(null, '', path); // Update URL without reloading
                   }}
                 >
                   {text}
@@ -116,7 +115,7 @@ const Navbar = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   document.querySelector(path)?.scrollIntoView({ behavior: 'smooth' });
-                  history.replaceState(null, "", path); // Update URL without reloading
+                  history.replaceState(null, '', path); // Update URL without reloading
                 }}
               >
                 {text}

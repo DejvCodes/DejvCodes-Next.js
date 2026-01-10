@@ -8,12 +8,12 @@ const iconMap = {
   Coffee,
   Code,
   Dumbbell,
-  Plane,
-};
+  Plane
+}
 
 const About: React.FC = () => {
-  return <section id='about' className='bg-slate-900/30 py-20'>
-    <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+  return <section id='about' className='relative bg-slate-900/30 py-24'>
+    <div className='max-w-7xl sm:px-6 lg:px-8 mx-auto px-4'>
       <ScrollReveal>
         <div className='mb-7'>
           <h2 className='text-white text-3xl md:text-4xl font-bold mb-2'>
@@ -29,7 +29,7 @@ const About: React.FC = () => {
           <div className='h-full bg-slate-950 border border-slate-800 rounded-3xl hover:border-slate-700 transition-colors p-7 md:p-8'>
             <div className='flex items-center gap-2 mb-4'>
               <Terminal className='w-6 h-6 text-light-blue' />
-              <h3 className='text-xl font-bold text-white'>
+              <h3 className='text-xl text-white font-bold'>
                 {BIO_BOX.title}
               </h3>
             </div>
@@ -44,13 +44,13 @@ const About: React.FC = () => {
         {/* Stats Box */}
         <ScrollReveal delay={200}>
           <div className='relative h-full flex flex-col justify-between bg-slate-950 border border-slate-800 rounded-3xl hover:border-slate-700 transition-colors overflow-hidden group p-7 md:p-8'>
-            <div className='absolute top-0 right-0 p-32 bg-light-blue/12 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-light-blue/20 transition-all'></div>
+            <div className='absolute top-0 right-0 bg-light-blue/7 rounded-full blur-3xl group-hover:bg-light-blue/15 transition-all p-32 -mr-16 -mt-16' />
             <div>
               <div className='flex items-center text-light-blue gap-2 mb-3'>
                 <Globe className='w-5 h-5' />
                 <span className='font-medium'>Based in</span>
               </div>
-              <p className='text-lg font-bold font-mono text-white mb-2'>
+              <p className='text-lg text-white font-bold font-mono mb-2'>
                 {STATS_BOX.location}
               </p>
               <div className='grid grid-cols-2 gap-4 mb-3'>
@@ -75,7 +75,7 @@ const About: React.FC = () => {
           <div className='h-full flex flex-col bg-slate-950 border border-slate-800 rounded-3xl hover:border-slate-700 transition-colors p-7 md:p-8'>
             <div className='flex items-center gap-2 mb-6'>
                 <Sparkles className='w-6 h-6 text-light-blue' />
-                <h3 className='text-xl font-bold text-white'>Daily Essentials</h3>
+                <h3 className='text-xl text-white font-bold'>Daily Essentials</h3>
             </div>
             <div className='space-y-6'>
               {DAILY_ESSENTIALS.map((item, index) => {
@@ -101,14 +101,14 @@ const About: React.FC = () => {
         </ScrollReveal>
         {/* Experience List */}
         <ScrollReveal delay={400} className='md:col-span-2'>
-          <div className='bg-slate-950 border border-slate-800 rounded-3xl hover:border-slate-700 transition-colors h-full p-7 md:p-8'>
+          <div className='h-full bg-slate-950 border border-slate-800 rounded-3xl hover:border-slate-700 transition-colors p-7 md:p-8'>
             <div className='flex items-center gap-2 mb-5'>
               <Briefcase className='w-6 h-6 text-light-blue' />
-              <h3 className='text-xl font-bold text-white'>Work History</h3>
+              <h3 className='text-xl text-white font-bold'>Work History</h3>
             </div>
             <div className='space-y-5 md:space-y-8'>
               {EXPERIENCE.map((job) => (
-                <div key={job.id} className='relative pl-4 md:pl-8 border-l border-slate-800 last:border-0'>
+                <div key={job.id} className='relative border-l border-slate-800 last:border-0 pl-4 md:pl-8'>
                   <div className='absolute -left-1.25 top-2 w-2.5 h-2.5 bg-light-blue rounded-full'></div>
                   <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1.5'>
                     <h4 className='text-white text-lg font-bold'>{job.role}</h4>
