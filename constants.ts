@@ -49,7 +49,7 @@ export const EXPERIENCE: Experience[] = [
     id: '1',
     role: 'Freelance Web Developer',
     company: 'DejvCodes',
-    period: '2025 - Present',
+    period: '2026 - Present',
     description: 'Building custom websites with clean code, detail-focused UI, responsive layouts, on-page SEO and performance optimization using TypeScript, Next.js, and Tailwind CSS.'
   },
   {
