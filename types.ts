@@ -46,8 +46,7 @@ export interface Experience {
   description: string;
 }
 
-// export interface SkillData {
-//   subject: string;
-//   A: number;
-//   fullMark: number;
-// }
+export interface SkillIcon {
+  icon: string;
+  language: string;
+} 
