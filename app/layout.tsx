@@ -6,7 +6,7 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
-});
+})
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description: 'DejvCodes je značka zaměřená na tvorbu moderních webových stránek na míru pomocí čistého kódu. Stavím rychlé, responzivní a přehledné weby, které vypadají skvěle a zároveň jsou optimalizované pro výkon a SEO. Od návrhu až po realizaci dotahuju detaily, které posouvají web na vyšší level. David Kalmus - Medior Front-end Developer.',
     images: ['/dejvcodes-logo.png'],
   }
-};
+}
 
 export default function RootLayout({
   children,
