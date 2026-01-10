@@ -1,4 +1,4 @@
-import {BioBox, DailyEssential, Experience, HeroContent, NavLink, StatsBox} from './types';
+import {BioBox, DailyEssential, Experience, HeroContent, NavLink, SkillIcon, StatsBox} from './types';
 
 export const NAV_LINKS: NavLink[] = [
   { id: 1, path: '#home', text: 'Home' },
@@ -12,7 +12,7 @@ export const HERO_CONTENT: HeroContent = {
   badge: 'Available for freelance projects',
   name: 'DejvCodes',
   role: 'Medior Front-end Developer',
-  description: 'I design and build websites, apps and interfaces that turn ideas into clean, high-performing experiences with sharp UI and real-world usability.',
+  description: 'I design and build websites, web apps and interfaces that turn ideas into clean, high-performing experiences with sharp UI and real-world usability.',
   viewWorkButton: 'View My Work',
   skillsButton: 'My Skills'
 };
@@ -20,7 +20,7 @@ export const HERO_CONTENT: HeroContent = {
 const yearOfExperience: number = new Date().getFullYear() - 2023;
 
 export const BIO_BOX: BioBox = {
-  title: 'Engineering Philosophy',
+  title: 'Building Philosophy',
   paragraphs: [
     'DejvCodes is my personal brand focused on building modern, custom websites and web apps with clean, well-structured code. I create fast, responsive experiences that look great, feel smooth and are optimized for performance and SEO.',
     `${yearOfExperience}+ years of front-end experience - clean code, sharp UI, real-world results.`
@@ -68,28 +68,31 @@ export const EXPERIENCE: Experience[] = [
   }
 ];
 
+export const SKILLS_ICONS: SkillIcon[] = [
+  { icon: "devicon-javascript-plain", language: "JavaScript" },
+  { icon: "devicon-typescript-plain", language: "TypeScript" },
+  { icon: "devicon-react-original", language: "React" },
+  { icon: "devicon-nextjs-plain", language: "Next.js" },
+  { icon: "devicon-vuejs-plain", language: "Vue 3" },
+  { icon: "devicon-nuxtjs-plain", language: "Nuxt 3" },
+  { icon: "devicon-tailwindcss-plain", language: "Tailwind" },
+  { icon: "devicon-vitejs-plain", language: "Vite" },
+  { icon: "devicon-gitlab-plain", language: "Gitlab" },
+  { icon: "devicon-vscode-plain", language: "VS Code" },
+  { icon: "devicon-figma-plain", language: "Figma" },
+  { icon: "devicon-cypressio-plain", language: "Cypress" },
+];
 
-// import SkillsChart from './SkillsChart';
-// export const SKILLS_DATA: SkillData[] = [
-//   { subject: 'JavaScript', A: 95, fullMark: 100 },
-//   { subject: 'TypeScript', A: 95, fullMark: 100 },
-//   { subject: 'React', A: 95, fullMark: 100 },
-//   { subject: 'Next.js', A: 90, fullMark: 100 },
-//   { subject: 'Vue 3', A: 90, fullMark: 100 },
-//   { subject: 'Nuxt 3', A: 85, fullMark: 100 },
-//   { subject: 'Tailwind', A: 95, fullMark: 100 },
-//   { subject: 'Figma', A: 85, fullMark: 100 },
-// ];
-
-{/* Skills Chart Box */}
-{/* <ScrollReveal delay={300} className='md:col-span-1'>
-  <div className='bg-slate-950 border border-slate-800 rounded-3xl p-4 flex flex-col hover:border-slate-700 transition-colors h-full'>
-  <div className='flex items-center gap-3 px-4 pt-4'>
-      <Cpu className='w-6 h-6 text-brand-400' />
-      <h3 className='text-xl font-bold text-white'>Technical Arsenal</h3>
-  </div>
-  <div className='flex-1 flex items-center justify-center'>
-    <SkillsChart />
-  </div>
-  </div>
-</ScrollReveal> */}
+// <div className="max-w-6xl mx-auto mt-16 sm:mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-slate-800/50">
+//   {[
+//     { label: 'Years Experience', value: '4+' },
+//     { label: 'Completed Projects', value: '24+' },
+//     { label: 'Happy Clients', value: '18+' },
+//     { label: 'Lines of Code', value: '500k+' },
+//   ].map((stat) => (
+//     <div key={stat.label} className="space-y-1">
+//       <div className="text-3xl font-bold text-white">{stat.value}</div>
+//       <div className="text-xs uppercase tracking-widest text-slate-500 font-semibold">{stat.label}</div>
+//     </div>
+//   ))}
+// </div>
