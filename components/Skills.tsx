@@ -17,17 +17,17 @@ const Skills: React.FC = () => {
           </h2>
 
           <p className='text-slate-300 md:text-lg leading-relaxed lg:max-w-xl'>
-            I specialize in building production-ready apps with{' '}
+            I build production-ready web apps with{' '}
             <span className='text-light-blue font-semibold'>Next.js</span> and{' '}
             <span className='text-light-blue font-semibold'>React</span>,
-            crafting type-safe code with{' '}
-            <span className='text-light-blue font-semibold'>TypeScript</span>,
-            and creating responsive UIs with{' '}
+            writing type-safe code with{' '}
+            <span className='text-light-blue font-semibold'>TypeScript </span>
+            and creating responsive UI with{' '}
             <span className='text-light-blue font-semibold'>Tailwind CSS</span>.
-            Currently working with{' '}
+            I also work daily with{' '}
             <span className='text-light-blue font-semibold'>Vue 3</span> and{' '}
-            <span className='text-light-blue font-semibold'>Nuxt 3</span> on
-            e-commerce solutions.
+            <span className='text-light-blue font-semibold'>Nuxt 3</span> on an
+            e-commerce app.
           </p>
 
           <p className='text-sm md:text-base text-slate-500 leading-relaxed'>
