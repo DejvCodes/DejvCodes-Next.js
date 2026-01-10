@@ -52,17 +52,15 @@ const Skills: React.FC = () => {
       </ScrollReveal>
 
       <ScrollReveal delay={300}>
-        <div className='flex flex-wrap lg:justify-end items-center gap-3 sm:gap-7'>
+        <div className='flex flex-wrap lg:justify-end items-center gap-1.5 sm:gap-7'>
           {SKILLS_ICONS.map((icon, index) => {
-            return (
-              <div
-                key={index}
-                className='w-25 h-25 sm:w-30 sm:h-30 flex flex-col items-center justify-center text-sm text-slate-300 bg-slate-950 border border-slate-800 rounded-2xl transition-all duration-200 ease-linear py-6 px-3 hover:border-slate-700 hover:bg-slate-900/50'
-              >
-                <i className={`${icon.icon} text-4xl sm:text-5xl mb-2`}></i>
-                <h4 className='font-medium text-center'>{icon.language}</h4>
-              </div>
-            );
+            return  <div
+              key={index}
+              className='w-20 h-20 sm:w-30 sm:h-30 flex flex-col items-center justify-center text-sm text-slate-300 bg-slate-950 border border-slate-800 rounded-2xl transition-all duration-200 ease-linear py-6 px-3 hover:border-slate-700 hover:bg-slate-900/50'
+            >
+              <i className={`${icon.icon} text-3xl sm:text-5xl mb-2`}></i>
+              <h4 className='text-[11px] text-sm font-medium text-center'>{icon.language}</h4>
+            </div>
           })}
         </div>
       </ScrollReveal>
