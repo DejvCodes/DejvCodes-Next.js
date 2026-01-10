@@ -144,38 +144,6 @@ section {
 .animate-scale-in {
   animation: scaleIn 0.4s ease-out;
 }
-/* ----- FRAMEWORK CARD GLOW EFFECT ----- */
-/* .framework-card {
-  position: relative;
-  width: 96px;
-  height: 96px;
-  border-radius: 12px;
-  border: 1px solid rgba(38, 38, 38, 0.7);
-  background: #181818;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 24px;
-  user-select: none;
-  -webkit-user-select: none;
-  --glow-color: rgba(0, 0, 0, 0);
-}
-.framework-card::before {
-  content: '';
-  position: absolute;
-  inset: 10%;
-  background-color: var(--glow-color);
-  filter: blur(18px);
-  z-index: -1;
-  opacity: 0;
-  will-change: opacity;
-  transition: opacity 5s ease;
-}
-.framework-card:hover::before {
-  opacity: 1;
-  transition: opacity 1s ease;
-} */
-
 /* 
   @media (prefers-color-scheme: dark) {
     :root {
