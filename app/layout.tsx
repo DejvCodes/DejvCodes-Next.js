@@ -44,12 +44,12 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head>
-        <link rel='icon' href='/favicon.ico' sizes='256x256' />
-        <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
-        <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon-180x180.png' />
-        <link rel='icon' type='image/png' sizes='192x192' href='/icon-192-192.png' />
-        <link rel='icon' type='image/png' sizes='256x256' href='/icon-256x256.png' />
-        <link rel='icon' type='image/png' sizes='300x300' href='/icon-300x300.png' />
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="DejvCodes" />
+        <link rel="manifest" href="/site.webmanifest" />
         <link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css' />
       </head>
       <body className={`${inter.variable} antialiased`}>
