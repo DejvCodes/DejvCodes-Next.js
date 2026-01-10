@@ -5,7 +5,7 @@ import {Inter} from 'next/font/google';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
 });
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'DejvCodes - David Kalmus',
     description: 'DejvCodes je značka zaměřená na tvorbu moderních webových stránek na míru pomocí čistého kódu. Stavím rychlé, responzivní a přehledné weby, které vypadají skvěle a zároveň jsou optimalizované pro výkon a SEO. Od návrhu až po realizaci dotahuju detaily, které posouvají web na vyšší level. David Kalmus - Medior Front-end Developer.',
     images: ['/dejvcodes-logo.png'],
-  },
+  }
 };
 
 export default function RootLayout({
@@ -50,6 +50,7 @@ export default function RootLayout({
         <link rel='icon' type='image/png' sizes='192x192' href='/icon-192-192.png' />
         <link rel='icon' type='image/png' sizes='256x256' href='/icon-256x256.png' />
         <link rel='icon' type='image/png' sizes='300x300' href='/icon-300x300.png' />
+        <link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css' />
       </head>
       <body className={`${inter.variable} antialiased`}>
         {children}
