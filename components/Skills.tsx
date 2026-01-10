@@ -30,7 +30,7 @@ const Skills: React.FC = () => {
             e-commerce app.
           </p>
 
-          <p className='text-sm md:text-base text-slate-500 leading-relaxed'>
+          <p className='text-sm md:text-base text-slate-500 leading-relaxed mb-4 sm:mb-5'>
             Every project is optimized for performance, SEO and real-world
             usability - delivering fast, accessible experiences that work
             flawlessly across all devices.
