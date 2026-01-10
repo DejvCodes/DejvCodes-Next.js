@@ -23,6 +23,8 @@ html {
   --breakpoint-max-570: 570px;
   --text-3\.5xl: 2rem;
   --text-3\.5xl--line-height: 2.375rem;
+  --text-3\.7xl: 2.2rem;
+  --text-3\.7xl--line-height: 2.575rem;
 }
 * {
   box-sizing: border-box;
