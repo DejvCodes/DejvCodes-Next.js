@@ -56,7 +56,7 @@ const About: React.FC = () => {
               <div className='grid grid-cols-2 gap-4 mb-3'>
                 <div>
                   <p className='text-sm text-slate-500'>Name</p>
-                  <p className='text-white font-mono'>{STATS_BOX.name}</p>
+                  <h2 className='text-white font-mono'>{STATS_BOX.name}</h2>
                 </div>
                 <div>
                   <p className='text-sm text-slate-500'>Age</p>
