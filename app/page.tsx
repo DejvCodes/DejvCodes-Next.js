@@ -4,6 +4,7 @@ import About from '@/components/About';
 import Skills from '@/components/Skills';
 import Navbar from '@/components/Navbar';
 import StarfieldBG from '@/components/StarfieldBG';
+import Projects from '@/components/Projects';
 
 const Home = () => {
   return <>
@@ -13,7 +14,7 @@ const Home = () => {
       <StarfieldBG />
       <About />
       <Skills />
-      <section id='projects' className='h-screen bg-slate-900/30'></section>
+      <Projects />
       <section id='contact' className='h-screen bg-slate-900/30'></section>
     </main>
   </>
