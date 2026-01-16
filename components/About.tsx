@@ -19,7 +19,7 @@ const About = () => {
           <h2 className='text-white font-bold text-3xl md:text-4xl mb-2'>
             About <span className='text-light-blue'>Me</span>
           </h2>
-          <div className='w-20 h-1.5 bg-light-blue rounded-full'></div>
+          <div className='w-20 h-1.5 bg-light-blue rounded-full' />
         </div>
       </ScrollReveal>
 
