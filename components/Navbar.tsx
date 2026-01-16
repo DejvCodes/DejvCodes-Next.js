@@ -130,9 +130,9 @@ const Navbar = () => {
         className='burger-menu hidden max-[700px]:flex flex-col gap-1.25 pt-0.5 cursor-pointer z-1000' 
         onClick={handleOpenMenu}
       >
-        <div className={`w-6.25 h-0.75 bg-white transition-all duration-400 ${openMenu ? '-rotate-45 translate-y-2' : ''}`}></div>
-        <div className={`w-6.25 h-0.75 bg-white transition-all duration-400 ${openMenu ? 'opacity-0' : ''}`}></div>
-        <div className={`w-6.25 h-0.75 bg-white transition-all duration-400 ${openMenu ? 'rotate-45 -translate-y-2' : ''}`}></div>
+        <div className={`w-6.25 h-0.75 bg-white transition-all duration-400 ${openMenu ? '-rotate-45 translate-y-2' : ''}`} />
+        <div className={`w-6.25 h-0.75 bg-white transition-all duration-400 ${openMenu ? 'opacity-0' : ''}`} />
+        <div className={`w-6.25 h-0.75 bg-white transition-all duration-400 ${openMenu ? 'rotate-45 -translate-y-2' : ''}`} />
       </div>
      </div>
   </header>
