@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {SKILLS_ICONS} from '@/constants';
 import ScrollReveal from './ScrollReveal';
 
-const Skills: React.FC = () => {
+const Skills = () => {
   return <section
     id='skills'
     className='relative bg-slate-900/40 py-17 sm:py-24 overflow-hidden'
