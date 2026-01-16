@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {HERO_CONTENT} from '../constants';
 import {ArrowRight, ArrowDown} from 'lucide-react';
 
-const Hero: React.FC = () => {
+const Hero = () => {
   return <section 
     id='home' 
     className='relative min-h-dvh flex items-center justify-center bg-linear-to-b from-black via-slate-960 to-slate-950 overflow-hidden pt-7'
@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
 
     <div className='absolute bottom-7 left-1/2 -translate-x-1/2 animate-bounce'>
       <div className='w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center pt-2'>
-        <div className='w-1.5 h-1.5 bg-light-blue rounded-full'></div>
+        <div className='w-1.5 h-1.5 bg-light-blue rounded-full' />
       </div>
     </div>
   </section>
