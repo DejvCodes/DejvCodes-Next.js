@@ -3,7 +3,7 @@ import Link from "next/link";
 import {PROJECTS} from "../constants";
 import ScrollReveal from "./ScrollReveal";
 
-const Projects: React.FC = () => {
+const Projects = () => {
   return <section id="projects" className="relative bg-slate-900/30 py-17 sm:py-24">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <ScrollReveal>
@@ -11,7 +11,7 @@ const Projects: React.FC = () => {
           <h2 className="text-white font-bold text-3xl md:text-4xl mb-2">
             Selected <span className="text-light-blue">Works</span>
           </h2>
-          <div className="w-20 h-1.5 bg-light-blue rounded-full"></div>
+          <div className="w-20 h-1.5 bg-light-blue rounded-full" />
         </div>
       </ScrollReveal>
 
@@ -53,6 +53,6 @@ const Projects: React.FC = () => {
       </div>
     </div>
   </section>
-};
+}
 
 export default Projects
