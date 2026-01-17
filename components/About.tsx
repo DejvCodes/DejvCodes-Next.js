@@ -12,7 +12,10 @@ const iconMap = {
 }
 
 const About = () => {
-  return <section id='about' className='relative bg-slate-900/30 py-24'>
+  return <section 
+    id='about' 
+    className='relative bg-slate-900/30 py-24'
+  >
     <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
       <ScrollReveal>
         <div className='mb-7'>
