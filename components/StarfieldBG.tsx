@@ -24,8 +24,8 @@ export default function StarfieldBG() {
     renderer.setSize(mount.clientWidth, mount.clientHeight);
     mount.appendChild(renderer.domElement);
 
-    // Particles
-    const count = 1800;
+    // Particles - reduced to 1000 for better performance
+    const count = 1000;
     const positions = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
       const i3 = i * 3;
@@ -57,7 +57,7 @@ export default function StarfieldBG() {
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
       renderer.setSize(w, h);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, ));
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     };
 
     const ro = new ResizeObserver(onResize);

@@ -1,9 +1,19 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import {PROJECTS} from "../constants";
 import ScrollReveal from "./ScrollReveal";
+import {useState} from "react";
 
 const Projects = () => {
+  const [activeCard, setActiveCard] = useState<string | null>(null);
+
+  const handleCardClick = (projectId: string, e: React.MouseEvent) => {
+    if (window.innerWidth >= 1024) return; // Disable click on desktop
+    e.preventDefault();
+    setActiveCard(activeCard === projectId ? null : projectId);
+  };
+
   return <section 
     id="projects" 
     className="relative bg-slate-900/30 py-17 sm:py-24"
@@ -20,20 +30,26 @@ const Projects = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {PROJECTS.map((project, index) => {
+          const isActive = activeCard === project.id;
+          
           return (
             <ScrollReveal key={project.id} delay={index * 100}>
               <div
                 key={project.id}
-                className="h-55 sm:h-63 group relative overflow-hidden rounded-2xl bg-slate-900/30"
+                className="h-55 sm:h-63 group relative overflow-hidden rounded-2xl bg-slate-900/30 cursor-pointer lg:cursor-default"
+                onClick={(e) => handleCardClick(project.id, e)}
               >
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700"
+                  priority={index === 0}
                 />
 
-                <div className="absolute inset-0 flex flex-col justify-end bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-7">
-                  <div className="transform group-hover:translate-y-0 transition-transform duration-500">
+                <div className={`absolute inset-0 flex flex-col justify-end bg-slate-950/50 ${isActive ? 'opacity-100' : 'opacity-0'} lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 p-7 ${!isActive ? 'pointer-events-none' : ''} lg:pointer-events-auto`}>
+                  <div className={`transform ${isActive ? 'translate-y-0' : 'translate-y-4'} lg:translate-y-4 lg:group-hover:translate-y-0 transition-transform duration-500`}>
                     <Link
                       href={project.link}
                       target="_blank"

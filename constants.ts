@@ -88,13 +88,13 @@ export const PROJECTS: Project[] = [
     id: '1',
     title: 'DejvCodes',
     link: 'https://dejvcodes.com',
-    image: '/DejvCodes-project-1.png',
+    image: '/DejvCodes-project-1.webp',
   },
   {    
     id: '2',
     title: 'Nexa Yonder',
     link: 'https://nexa-yonder.netlify.app/',
-    image: '/Nexa-Yonder-project-2.png',
+    image: '/Nexa-Yonder-project-2.webp',
   }
 ];
 
