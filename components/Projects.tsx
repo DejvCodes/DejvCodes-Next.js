@@ -55,6 +55,7 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex justify-between items-end"
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <h4 className="text-2xl font-bold text-white">
                         {project.title}
