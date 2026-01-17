@@ -116,7 +116,7 @@ export const PROJECTS: Project[] = [
 
 export const CONTACT_CONTENT = {
   heading: 'Interested in working together?',
-  description: "I'm currently available for new projects and open to discussing full-time opportunities.",
+  description: "Available for new projects - let’s build something great.",
   buttonText: 'Get in touch',
   buttonLink: 'mailto:info@dejvcodes.com'
 };
