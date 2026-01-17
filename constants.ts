@@ -1,4 +1,4 @@
-import {BioBox, DailyEssential, Experience, HeroContent, NavLink, SkillIcon, StatsBox} from './types';
+import {BioBox, DailyEssential, Experience, HeroContent, NavLink, Project, SkillIcon, SocialLink, StatsBox} from './types';
 
 export const NAV_LINKS: NavLink[] = [
   { id: 1, path: '#home', text: 'Home' },
@@ -82,6 +82,47 @@ export const SKILLS_ICONS: SkillIcon[] = [
   { icon: "devicon-figma-plain", language: "Figma" },
   { icon: "devicon-cypressio-plain", language: "Cypress" },
 ];
+
+export const PROJECTS: Project[] = [
+  {
+    id: '1',
+    title: 'ReesutCut',
+    link: 'https://dejvcodes.com',
+    image: '/ReesutCut.jpg',
+  },
+];
+
+export const CONTACT_CONTENT = {
+  heading: 'Interested in working together?',
+  description: "I'm currently available for new projects and open to discussing full-time opportunities.",
+  buttonText: 'Get in touch',
+  buttonLink: 'mailto:info@dejvcodes.com'
+};
+
+// Icons
+import {FaGithub} from "react-icons/fa6"
+import {FaLinkedin} from "react-icons/fa6"
+import {FaEnvelope} from "react-icons/fa"
+import {FaInstagram} from "react-icons/fa"
+
+export const SOCIAL_LINKS: SocialLink[] = [
+  { name: 'Instagram', url: 'https://instagram.com/dejvcodes', icon: FaInstagram, width: 8, height: 8 },
+  { name: 'GitHub', url: 'https://github.com/dejvcodes', icon: FaGithub, width: 8, height: 8 },
+  { name: 'LinkedIn', url: 'https://linkedin.com/in/dejvcodes', icon: FaLinkedin, width: 8, height: 8 },
+  { name: 'Email', url: 'mailto:info@dejvcodes.com', icon: FaEnvelope, width: 8, height: 8 },
+];
+
+export const FOOTER_CONTENT = {
+  name: 'David Kalmus',
+  role: 'Medior Front-end Developer',
+  location: 'Pardubice, Czech Republic',
+  ico: 'IČO: 24078140',
+  copyright: 'DejvCodes. All rights reserved.',
+  privacyLink: '/privacy-policy',
+  privacyText: 'Privacy Policy',
+  badge: 'Built with Next.js & TypeScript',
+  year: new Date().getFullYear()
+};
 
 // <div className="max-w-6xl mx-auto mt-16 sm:mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-slate-800/50">
 //   {[
