@@ -106,9 +106,9 @@ import {FaEnvelope} from "react-icons/fa"
 import {FaInstagram} from "react-icons/fa"
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { name: 'Instagram', url: 'https://instagram.com/dejvcodes', icon: FaInstagram, width: 8, height: 8 },
-  { name: 'GitHub', url: 'https://github.com/dejvcodes', icon: FaGithub, width: 8, height: 8 },
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/dejvcodes', icon: FaLinkedin, width: 8, height: 8 },
+  { name: 'Instagram', url: 'https://www.instagram.com/dejvcodes/', icon: FaInstagram, width: 8, height: 8 },
+  { name: 'GitHub', url: 'https://github.com/DejvCodes', icon: FaGithub, width: 8, height: 8 },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/company/dejvcodes-david-kalmus/', icon: FaLinkedin, width: 8, height: 8 },
   { name: 'Email', url: 'mailto:info@dejvcodes.com', icon: FaEnvelope, width: 8, height: 8 },
 ];
 
