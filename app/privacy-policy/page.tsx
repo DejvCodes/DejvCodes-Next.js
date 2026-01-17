@@ -8,68 +8,46 @@ const PrivacyPolicy = () => {
         href="/" 
         className="inline-flex items-center text-slate-400 hover:text-light-blue transition-colors mb-8"
       >
-        <ArrowLeft className="w-4 h-4 mr-2" /> Zpět na hlavní stránku
+        <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
       </Link>
 
       <h1 className="text-4xl md:text-5xl font-bold text-white mb-8">
-        Ochrana osobních údajů
+        Privacy Policy
       </h1>
 
       <div className="space-y-8 text-slate-300">
         <section>
-          <h2 className="text-2xl font-semibold text-white mb-4">Kdo jsme</h2>
-          <p className="leading-relaxed mb-3">
-            Naše webová adresa je: www.dejvcodes.com. Provozovatelem webu je David Kalmus se sídlem 
-            Pardubice, IČ: 24078140, zapsán v živnostenském rejstříku.
-          </p>
-          <div className="text-slate-400 mt-4">
+          <h2 className="text-2xl font-semibold text-white mb-4">Operator</h2>
+          <div className="text-slate-300 space-y-1">
             <p>David Kalmus</p>
-            <p>IČO: 24078140</p>
-            <p>Pardubice, Česká republika</p>
-            <p>E-mail: <a href="mailto:info@dejvcodes.com" className="text-light-blue hover:underline">info@dejvcodes.com</a></p>
+            <p>ID: 24078140</p>
+            <p>Pardubice, Czech Republic</p>
+            <p>Email: <a href="mailto:info@dejvcodes.com" className="text-light-blue hover:underline">info@dejvcodes.com</a></p>
           </div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold text-white mb-4">Jaké osobní údaje zpracováváme</h2>
-          
-          <h3 className="text-xl font-semibold text-white mb-3 mt-6">Serverové logy</h3>
+          <h2 className="text-2xl font-semibold text-white mb-4">Personal Data Processing</h2>
           <p className="leading-relaxed mb-4">
-            Při návštěvě těchto webových stránek automaticky zaznamenává webový server základní technické údaje 
-            (IP adresa, čas přístupu, typ prohlížeče). Toto zpracování probíhá automaticky u webhostingového 
-            poskytovatele (Vedos) a je nezbytné pro zajištění funkčnosti a bezpečnosti webu.
+            This website does not use cookies, analytics tools or tracking technologies. 
+            Your behavior on the website is not monitored or analyzed.
           </p>
           <p className="leading-relaxed mb-4">
-            <strong>Právní základ:</strong> Oprávněný zájem správce na zajištění bezpečnosti a technického provozu 
-            (čl. 6 odst. 1 písm. f) GDPR).
+            When you visit the site, basic technical data (IP address, access time, browser type) 
+            is automatically recorded in the web hosting server logs. This data is stored for a maximum 
+            of 30 days and is used solely to ensure the security and technical operation of the website.
           </p>
           <p className="leading-relaxed">
-            <strong>Doba uchovávání:</strong> Maximálně 30 dní.
+            If you contact me by email, I process your data only to respond to your inquiry. 
+            Your data is not shared with third parties.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold text-white mb-4">Cookies</h2>
+          <h2 className="text-2xl font-semibold text-white mb-4">Your Rights</h2>
           <p className="leading-relaxed">
-            Tento web nepoužívá žádné cookies, analytické nástroje ani sledovací technologie. 
-            Vaše chování na webu není monitorováno ani analyzováno.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold text-white mb-4">E-mailová komunikace</h2>
-          <p className="leading-relaxed">
-            Pokud nás kontaktujete e-mailem prostřednictvím odkazu na webu, komunikace probíhá 
-            mimo tento web pomocí vašeho e-mailového klienta. Údaje z takové komunikace zpracováváme 
-            pouze za účelem odpovědi na váš dotaz.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold text-white mb-4">Vaše práva</h2>
-          <p className="leading-relaxed mb-3">
-            Máte právo na přístup k informacím o zpracování vašich údajů a právo podat stížnost 
-            u Úřadu pro ochranu osobních údajů. V případě dotazů nás kontaktujte na{' '}
+            You have the right to access, correct or delete your data. 
+            If you have any questions, contact me at{' '}
             <a href="mailto:info@dejvcodes.com" className="text-light-blue hover:underline">
               info@dejvcodes.com
             </a>
@@ -78,11 +56,9 @@ const PrivacyPolicy = () => {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold text-white mb-4">Jak chráníme vaše informace</h2>
+          <h2 className="text-2xl font-semibold text-white mb-4">Security</h2>
           <p className="leading-relaxed">
-            Webové stránky využívají HTTPS šifrování pro zabezpečenou komunikaci. Vaše údaje 
-            neprodáváme, nepředáváme ani nesdílíme s třetími stranami kromě webhostingového 
-            poskytovatele (Vedos), který zajišťuje technický provoz webu.
+            The website uses HTTPS encryption for secure communication.
           </p>
         </section>
       </div>
@@ -92,7 +68,7 @@ const PrivacyPolicy = () => {
           href="/" 
           className="inline-flex items-center text-slate-400 hover:text-light-blue transition-colors"
         >
-          <ArrowLeft className="w-4 h-4 mr-2" /> Zpět na hlavní stránku
+          <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
         </Link>
       </div>
     </div>
