@@ -12,17 +12,11 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
   metadataBase: new URL('https://dejvcodes.com'),
   title: 'DejvCodes - David Kalmus',
-  description: 'DejvCodes je značka zaměřená na tvorbu moderních webových stránek na míru pomocí čistého kódu. Stavím rychlé, responzivní a přehledné weby, které vypadají skvěle a zároveň jsou optimalizované pro výkon a SEO. Od návrhu až po realizaci dotahuju detaily, které posouvají web na vyšší level. David Kalmus - Medior Front-end Developer.',
-  // icons: {
-  //   icon: [
-  //     { url: '/favicon.ico', sizes: '256x256' },
-  //     { url: '/icon-96x96.png', sizes: '96x96', type: 'image/png' },
-  //     { url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' },
-  //     { url: '/icon-512x512.png', sizes: '512x512', type: 'image/png' }
-  //   ],
-  //   shortcut: '/favicon.ico',
-  //   apple: '/apple-touch-icon.png',
-  // },
+  description: 'DejvCodes je značka zaměřená na tvorbu moderních webových stránek na míru pomocí čistého kódu. Stavím rychlé, responzivní a přehledné weby, které vypadají skvěle a zároveň jsou optimalizované pro výkon a SEO. Od návrhu až po realizaci dotahuju detaily, které posouvají web na vyšší level. David Kalmus - Medior Front-end Developer, Pardubice.',
+  keywords: ['DejvCodes', 'David Kalmus', 'Tvorba webových stránek', 'Weby na míru', 'Pardubice', 'Front-end Developer', 'Web Developer', 'Web Design', 'Web Development', 'Portfolio', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'HTML', 'CSS', 'Web Performance', 'SEO', 'Responsive Design', 'Weby Pardubice'],
+  authors: [{ name: 'David Kalmus', url: 'https://dejvcodes.com' }],
+  creator: 'David Kalmus',
+  publisher: 'David Kalmus',
   openGraph: {
     title: 'DejvCodes - David Kalmus',
     description: 'DejvCodes je značka zaměřená na tvorbu moderních webových stránek na míru pomocí čistého kódu. Stavím rychlé, responzivní a přehledné weby, které vypadají skvěle a zároveň jsou optimalizované pro výkon a SEO. Od návrhu až po realizaci dotahuju detaily, které posouvají web na vyšší level. David Kalmus - Medior Front-end Developer.',
@@ -51,24 +45,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang='en'>
-      <head>
-        {/* <link rel='icon' href='/favicon.ico' sizes='256x256' />
-        <link rel='icon' type='image/svg+xml' href='/favicon.svg' /> */}
-        <link rel='shortcut icon' href='/favicon.png' type='image/x-icon' />
-        {/* <link rel='icon' type='image/png' href='/icon-96x96.png' sizes='96x96' /> */}
-        {/* <link rel='icon' type='image/png' href='/icon-192x192.png' sizes='192x192' />
-        <link rel='icon' type='image/png' href='/icon-300x300.png' sizes='300x300' />
-        <link rel='icon' type='image/png' href='/icon-512x512.png' sizes='512x512' /> */}
-        {/* <link rel='apple-touch-icon' href='/apple-touch-icon.png' sizes='180x180' /> */}
-        {/* <meta name='apple-mobile-web-app-title' content='DejvCodes' />
-        <link rel='manifest' href='/site.webmanifest' /> */}
-        <link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css' />
-      </head>
-      <body className={`${inter.variable} antialiased`}>
-        {children}
-      </body>
-    </html>
-  )
+  return <html 
+    lang='en' 
+    data-scroll-behavior="smooth"
+  >
+    <head>
+      <link rel='shortcut icon' href='/favicon.png' type='image/x-icon' />
+      <link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css' />
+    </head>
+    <body className={`${inter.variable} antialiased`}>
+      {children}
+    </body>
+  </html>
 }
