@@ -25,7 +25,7 @@ export default function StarfieldBG() {
     mount.appendChild(renderer.domElement);
 
     // Particles - reduced to 1000 for better performance
-    const count = 1000;
+    const count = 1200;
     const positions = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
       const i3 = i * 3;
