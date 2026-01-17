@@ -86,10 +86,16 @@ export const SKILLS_ICONS: SkillIcon[] = [
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'ReesutCut',
+    title: 'DejvCodes',
     link: 'https://dejvcodes.com',
-    image: '/ReesutCut.jpg',
+    image: '/DejvCodes-project-1.png',
   },
+  {    
+    id: '2',
+    title: 'Nexa Yonder',
+    link: 'https://nexa-yonder.netlify.app/',
+    image: '/Nexa-Yonder-project-2.png',
+  }
 ];
 
 export const CONTACT_CONTENT = {
