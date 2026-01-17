@@ -1,3 +1,5 @@
+import {IconType} from 'react-icons';
+
 export interface NavLink {
   id: number;
   path: string;
@@ -47,7 +49,7 @@ export interface Experience {
 }
 
 export interface SkillIcon {
-  icon: string;
+  icon: IconType;
   language: string;
 } 
 

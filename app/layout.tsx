@@ -51,7 +51,6 @@ export default function RootLayout({
   >
     <head>
       <link rel='shortcut icon' href='/favicon.svg' type='image/x-icon' />
-      <link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css' />
     </head>
     <body className={`${inter.variable} antialiased`}>
       {children}

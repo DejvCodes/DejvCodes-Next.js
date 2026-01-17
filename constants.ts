@@ -1,5 +1,21 @@
 import {BioBox, DailyEssential, Experience, HeroContent, NavLink, Project, SkillIcon, SocialLink, StatsBox} from './types';
 
+import { 
+  SiJavascript, 
+  SiTypescript, 
+  SiReact, 
+  SiNextdotjs, 
+  SiVuedotjs, 
+  SiNuxtdotjs, 
+  SiTailwindcss, 
+  SiVite, 
+  SiGitlab, 
+  SiFigma, 
+  SiCypress 
+} from 'react-icons/si';
+import {VscVscode} from "react-icons/vsc";
+
+
 export const NAV_LINKS: NavLink[] = [
   { id: 1, path: '#home', text: 'Home' },
   { id: 2, path: '#about', text: 'About' },
@@ -69,18 +85,18 @@ export const EXPERIENCE: Experience[] = [
 ];
 
 export const SKILLS_ICONS: SkillIcon[] = [
-  { icon: "devicon-javascript-plain", language: "JavaScript" },
-  { icon: "devicon-typescript-plain", language: "TypeScript" },
-  { icon: "devicon-react-original", language: "React" },
-  { icon: "devicon-nextjs-plain", language: "Next.js" },
-  { icon: "devicon-vuejs-plain", language: "Vue 3" },
-  { icon: "devicon-nuxtjs-plain", language: "Nuxt 3" },
-  { icon: "devicon-tailwindcss-plain", language: "Tailwind" },
-  { icon: "devicon-vitejs-plain", language: "Vite" },
-  { icon: "devicon-gitlab-plain", language: "Gitlab" },
-  { icon: "devicon-vscode-plain", language: "VS Code" },
-  { icon: "devicon-figma-plain", language: "Figma" },
-  { icon: "devicon-cypressio-plain", language: "Cypress" },
+  { icon: SiJavascript, language:  "JavaScript" },
+  { icon: SiTypescript, language:  "TypeScript" },
+  { icon: SiReact, language: "React" },
+  { icon: SiNextdotjs, language: "Next.js" },
+  { icon: SiVuedotjs, language:  "Vue 3" },
+  { icon: SiNuxtdotjs, language: "Nuxt 3" },
+  { icon: SiTailwindcss, language: "Tailwind" },
+  { icon:  SiVite, language: "Vite" },
+  { icon: SiGitlab, language: "Gitlab" },
+  { icon: VscVscode, language: "VS Code" },
+  { icon:  SiFigma, language: "Figma" },
+  { icon: SiCypress, language: "Cypress" },
 ];
 
 export const PROJECTS: Project[] = [
