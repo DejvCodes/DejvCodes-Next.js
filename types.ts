@@ -50,3 +50,25 @@ export interface SkillIcon {
   icon: string;
   language: string;
 } 
+
+export interface Project {
+  id: string;
+  title: string;
+  image: string;
+  link: string;
+}
+
+export interface SocialLink {
+  name: string;
+  url: string;
+  icon: React.ComponentType<any>;
+  width: number;
+  height: number;
+}
+
+export interface ContactContent {
+  heading: string;
+  subheading: string;
+  buttonText: string;
+  email: string;
+}
