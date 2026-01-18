@@ -3,7 +3,7 @@ import {ArrowLeft} from 'lucide-react';
 
 const PrivacyPolicy = () => {
   return <main className="min-h-screen py-20">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 className="text-4xl md:text-5xl font-bold text-white mb-8">
         Privacy Policy
       </h1>
