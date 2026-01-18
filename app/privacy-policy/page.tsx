@@ -55,14 +55,12 @@ const PrivacyPolicy = () => {
         </section>
       </div>
 
-      <div className="mt-12 pt-8 border-t border-slate-800/50">
-        <Link 
-          href="/" 
-          className="inline-flex items-center text-slate-400 hover:text-light-blue transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
-        </Link>
-      </div>
+      <Link 
+        href='/'
+        className='inline-block bg-slate-900/50 hover:bg-slate-800 text-white font-semibold rounded-xl border border-slate-700 transition-colors duration-300 px-10 py-3 mt-7'
+      >
+        Back to Home
+      </Link>
     </div>
   </main>
 }
