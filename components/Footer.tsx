@@ -31,7 +31,7 @@ const Footer = () => {
       <ScrollReveal delay={200}>
         <div className="border-t border-slate-800/50 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex flex-col md:flex-row items-center gap-4 mb-2">
+            <div className="flex flex-col md:flex-row items-center gap-4 mb-1">
               <p className="text-slate-500 text-sm">
                 &copy; {FOOTER_CONTENT.year} {FOOTER_CONTENT.copyright}
               </p>

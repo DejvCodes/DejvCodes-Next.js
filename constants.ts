@@ -138,7 +138,7 @@ export const FOOTER_CONTENT = {
   name: 'David Kalmus',
   role: 'Medior Front-end Developer',
   location: 'Pardubice, Czech Republic',
-  ico: 'IČO: 24078140',
+  ico: 'info@dejvcodes.com', // IČO: 24078140',
   copyright: 'DejvCodes. All rights reserved.',
   privacyLink: '/privacy-policy',
   privacyText: 'Privacy Policy',

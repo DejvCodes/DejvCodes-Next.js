@@ -20,7 +20,6 @@ const PrivacyPolicy = () => {
           <h2 className="text-2xl font-semibold text-white mb-4">Operator</h2>
           <div className="text-slate-300 space-y-1">
             <p>David Kalmus</p>
-            <p>ID: 24078140</p>
             <p>Pardubice, Czech Republic</p>
             <p>Email: <a href="mailto:info@dejvcodes.com" className="text-light-blue hover:underline">info@dejvcodes.com</a></p>
           </div>
