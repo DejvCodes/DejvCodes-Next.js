@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
-import {SOCIAL_LINKS, CONTACT_CONTENT} from "@/constants";
 import ScrollReveal from './ScrollReveal';
+import {SOCIAL_LINKS, CONTACT_CONTENT} from "@/constants/content";
 
 const Contact = () => {
   return <section 

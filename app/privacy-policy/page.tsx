@@ -1,5 +1,4 @@
 import Link from "next/link";
-import {ArrowLeft} from 'lucide-react';
 
 const PrivacyPolicy = () => {
   return <main className="min-h-screen py-20">

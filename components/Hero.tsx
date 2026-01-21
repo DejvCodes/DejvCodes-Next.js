@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import {HERO_CONTENT} from '../constants';
+import {HERO_CONTENT} from '../constants/content';
 import {ArrowRight, ArrowDown} from 'lucide-react';
 
 const Hero = () => {
@@ -17,7 +17,6 @@ const Hero = () => {
     
       <h1 
         className='text-3.7xl md:text-7xl font-bold tracking-tight mb-4 sm:mb-8 text-white animate-fade-in-up!' 
-        style={{ animationDelay: '0.1s', animationFillMode: 'backwards' }}
       > 
         Hi, I'm <span className='text-light-blue'>{HERO_CONTENT.name}</span>.
         <br />

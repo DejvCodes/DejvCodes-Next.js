@@ -1,20 +1,20 @@
 'use client';
 import Link from "next/link";
-import {FOOTER_CONTENT} from "@/constants";
+import {FOOTER_CONTENT} from "@/constants/content";
 import ScrollReveal from './ScrollReveal';
 
 const Footer = () => {
-  return <footer className="relative border-t border-slate-800/50 overflow-hidden">
+  return <footer 
+    className="relative border-t border-slate-800/50 overflow-hidden"
+  >
     <div className="absolute inset-0 bg-linear-to-b from-slate-900/20 via-slate-950/40 to-black"></div>
     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
         <ScrollReveal>
           <div className="space-y-6">
-            <div>
-              <h2 className="text-2xl font-semibold text-slate-300 mt-4">
-                {FOOTER_CONTENT.name}
-              </h2>
-            </div>
+            <h2 className="text-2xl font-semibold text-slate-300 mt-4">
+              {FOOTER_CONTENT.name}
+            </h2>
             <div className="w-20 h-1 bg-linear-to-r from-light-blue to-transparent rounded-full" />
           </div>
         </ScrollReveal>

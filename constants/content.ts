@@ -1,4 +1,4 @@
-import {BioBox, DailyEssential, Experience, HeroContent, NavLink, Project, SkillIcon, SocialLink, StatsBox} from './types';
+import {BioBox, DailyEssential, Experience, HeroContent, NavLink, Project, SkillIcon, SocialLink, StatsBox} from '../types/types';
 
 import { 
   SiJavascript, 

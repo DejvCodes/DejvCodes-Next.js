@@ -6,12 +6,6 @@ export interface NavLink {
   text: string;
 }
 
-export interface ScrollRevealProps {
-  children: React.ReactNode;
-  delay?: number;
-  className?: string;
-}
-
 export interface HeroContent {
   badge: string;
   name: string;

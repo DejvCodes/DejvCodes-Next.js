@@ -1,34 +1,40 @@
 'use client';
-import {ScrollRevealProps} from '@/types';
 import {useEffect, useRef, useState} from 'react';
 
-const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, delay = 0, className = '' }) => {
+const ScrollReveal = ({ 
+  children, 
+  delay = 0, 
+  className = '' 
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) => {
   const [isVisible, setIsVisible] = useState(false);
+  // Ref na wrapper <div>, který bude IntersectionObserver sledovat
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const el = ref.current; // Získání aktuálního DOM elementu
+    if (!el) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
+        // Když je element viditelný, nastavíme isVisible na true
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target);
+          observer.disconnect(); // Odpojení observeru po zobrazení
         }
       },
       {
-        threshold: 0.1,
-        rootMargin: '50px',
+        threshold: 0.1, // Spustí se, když je alespoň 10% elementu viditelné
+        rootMargin: '0px 0px -30px 0px' // Trochu posunout spouštění vzhledem k viewportu
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(el); // Začít sledovat konkrétní element
 
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
+    return () => observer.disconnect(); // Cleanup: při unmountu komponenty observer odpojíme
   }, []);
 
   return <div

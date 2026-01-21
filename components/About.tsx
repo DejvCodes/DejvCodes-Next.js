@@ -1,6 +1,6 @@
 'use client';
 import ScrollReveal from './ScrollReveal';
-import {BIO_BOX, STATS_BOX, DAILY_ESSENTIALS, EXPERIENCE} from '../constants';
+import {BIO_BOX, STATS_BOX, DAILY_ESSENTIALS, EXPERIENCE} from '../constants/content';
 import {Briefcase, Terminal, Globe, Coffee, Code, Dumbbell, Plane, Brain, Sparkles} from 'lucide-react';
 
 const iconMap = {
@@ -83,6 +83,7 @@ const About = () => {
             <div className='space-y-6'>
               {DAILY_ESSENTIALS.map((item, index) => {
                 const Icon = iconMap[item.icon as keyof typeof iconMap];
+                
                 return <div key={index}>
                   <div className='flex items-center justify-between mb-2'>
                     <div className='flex items-center gap-2'>

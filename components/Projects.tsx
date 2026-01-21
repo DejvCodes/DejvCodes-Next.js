@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import {PROJECTS} from "../constants";
+import {PROJECTS} from "../constants/content";
 import ScrollReveal from "./ScrollReveal";
 import {useState} from "react";
 
@@ -9,9 +9,9 @@ const Projects = () => {
   const [activeCard, setActiveCard] = useState<string | null>(null);
 
   const handleCardClick = (projectId: string, e: React.MouseEvent) => {
-    if (window.innerWidth >= 1024) return; // Disable click on desktop
+    if (window.innerWidth >= 1024) return; // Pokud je šířka okna větší nebo rovna 1024px, nedělej nic
     e.preventDefault();
-    setActiveCard(activeCard === projectId ? null : projectId);
+    setActiveCard(activeCard === projectId ? null : projectId); // Přepínání aktivního stavu
   };
 
   return <section 

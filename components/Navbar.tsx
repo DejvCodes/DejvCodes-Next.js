@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import {Code2} from 'lucide-react';
-import {NAV_LINKS} from '@/constants';
+import {NAV_LINKS} from '@/constants/content';
 import {useEffect, useState} from 'react';
 
 const Navbar = () => {
@@ -15,17 +15,23 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      let currentSection = '';  
+
       const sections = document.querySelectorAll('section');
-      let currentSection = '';
       setScrolled(window.scrollY > 7);
 
       sections.forEach((oneSection) => {
         const sectionTop = (oneSection as HTMLElement).offsetTop;
         const sectionHeight = (oneSection as HTMLElement).offsetHeight;
-        if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+
+        if (
+          window.scrollY >= sectionTop - 120 && 
+          window.scrollY < sectionTop + sectionHeight - 120
+        ) {
           currentSection = oneSection.getAttribute('id') || '';
         }
       });
+
       if (currentSection) {
         setActiveSection(currentSection);
       }
@@ -69,8 +75,10 @@ const Navbar = () => {
         <ul className='flex items-center gap-4 lg:gap-6'>
           {NAV_LINKS.map((oneLink) => {
             const { id, path, text } = oneLink;
+            
             const sectionId = path.replace('#', '');
             const isActive = activeSection === sectionId;
+
               return <li key={id} className='link group relative list-none'>
                 <Link
                   href={path}

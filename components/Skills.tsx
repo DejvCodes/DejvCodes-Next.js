@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import {SKILLS_ICONS} from '@/constants';
+import {SKILLS_ICONS} from '@/constants/content';
 import ScrollReveal from './ScrollReveal';
 
 const Skills = () => {
@@ -55,6 +55,7 @@ const Skills = () => {
         <div className='flex flex-wrap lg:justify-end items-center gap-1.5 sm:gap-7'>
           {SKILLS_ICONS.map((icon, index) => {
             const Icon = icon.icon;
+            
             return  <div
               key={index}
               className='w-20 h-20 sm:w-30 sm:h-30 flex flex-col items-center justify-center text-sm text-slate-300 bg-slate-950 border border-slate-800 rounded-2xl transition-all duration-200 ease-linear hover:border-slate-700 hover:bg-slate-900/50'
