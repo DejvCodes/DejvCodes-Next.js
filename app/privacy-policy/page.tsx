@@ -56,6 +56,7 @@ const PrivacyPolicy = () => {
 
       <Link 
         href='/'
+        prefetch={false}
         className='inline-block bg-slate-900/50 hover:bg-slate-800 text-white font-semibold rounded-xl border border-slate-700 transition-colors duration-300 px-10 py-3 mt-7'
       >
         Back to Home
