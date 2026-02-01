@@ -40,16 +40,21 @@ components/
 ├── About.tsx            # About section component
 ├── Contact.tsx          # Contact section component
 ├── Footer.tsx           # Footer component
+├── Header.tsx           # Header component
 ├── Hero.tsx             # Hero section component
-├── Header.tsx           # Navigation bar component
 ├── Projects.tsx         # Projects showcase component
 ├── ScrollReveal.tsx     # Scroll animation component
 ├── Skills.tsx           # Skills display component
 └── StarfieldBG.tsx      # 3D starfield background component
 
+constants/
+└── content.ts           # Application constants and content
+
+types/
+└── types.ts             # TypeScript type definitions
+
 public/                  # Static assets (images, icons, favicon)
-constants.ts             # Application constants
-types.ts                 # TypeScript type definitions
+.editorconfig            # Editor configuration
 ```
 
 ## 🌐 Live Demo
