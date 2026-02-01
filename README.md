@@ -41,7 +41,7 @@ components/
 ├── Contact.tsx          # Contact section component
 ├── Footer.tsx           # Footer component
 ├── Hero.tsx             # Hero section component
-├── Navbar.tsx           # Navigation bar component
+├── Header.tsx           # Navigation bar component
 ├── Projects.tsx         # Projects showcase component
 ├── ScrollReveal.tsx     # Scroll animation component
 ├── Skills.tsx           # Skills display component
