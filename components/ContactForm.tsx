@@ -10,7 +10,7 @@ const contactFormInitialData: FormData = {
 	email: '',
 	subject: '',
 	message: '',
-	website: 'https://dejvcodes.com',
+	website: '', // honeypot field
 };
 
 const ContactForm = () => {

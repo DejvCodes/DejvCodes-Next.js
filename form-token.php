@@ -1,6 +1,16 @@
 <?php
 declare(strict_types=1);
 
+// setting secure session cookie parameters
+session_set_cookie_params([
+  'lifetime' => 0,
+  'path' => '/',
+  'domain' => $_SERVER['HTTP_HOST'] ?? '',
+  'secure' => true,     // jen přes HTTPS
+  'httponly' => true,   // JS se k cookie nedostane
+  'samesite' => 'Lax',  // nebo 'Strict' (Lax bývá praktičtější)
+]);
+
 // preventing caching of the response
 header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
 header('Pragma: no-cache');

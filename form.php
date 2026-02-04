@@ -83,26 +83,25 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($email) > 120) fail(
 if ($subject === '' || mb_strlen($subject) > 200) fail(400, 'Fill in the subject.');
 if ($message === '' || mb_strlen($message) > 4000) fail(400, 'Message is empty / too long.');
 // ochrana proti header injection
-$emailSafe = str_replace(['\r', '\n'], '', $email);
-$nameSafe  = str_replace(['\r', '\n'], '', $name);
-$subjectSafe = str_replace(['\r', '\n'], '', $subject);
+$emailSafe = str_replace(["\r", "\n"], '', $email);
+$nameSafe  = str_replace(["\r", "\n"], '', $name);
+$subjectSafe = str_replace(["\r", "\n"], '', $subject);
 
 // --- composing the email ---
-$emailSubject = 'Message from dejvcodes.com form: ' . $subjectSafe;
+$emailSubject = $subjectSafe;
 
 $body =
-'Name: {$nameSafe}\n' .
-'Email: {$emailSafe}\n' .
-'Subject: {$subjectSafe}\n' .
-'Website: ' . ($origin ?: 'unknown') .
-'---\n' .
-$message . '\n';
+"Name: {$nameSafe}\n" .
+"Email: {$emailSafe}\n" .
+"Subject: {$subjectSafe}\n" .
+"---\n" .
+$message . "\n";
 
 $headers = [
   'MIME-Version: 1.0',
   'Content-Type: text/plain; charset=UTF-8',
-  'From: DejvCodes <{$FROM}>',
-  'Reply-To: {$emailSafe}',
+  "From: DejvCodes <{$FROM}>",
+  "Reply-To: {$emailSafe}",
 ];
 
 // UTF-8 subject
@@ -113,7 +112,7 @@ $ok = mail(
   $TO,
   $subjectEnc,
   $body,
-  implode('\r\n', $headers),
+  implode("\r\n", $headers),
   '-f ' . $FROM
 );
 
