@@ -47,7 +47,7 @@ export default function RootLayout({
 }>) {
 	return <html
 		lang='en'
-		data-scroll-behavior="smooth"
+		data-scroll-behavior='smooth'
 	>
 		<head>
 			<link rel='shortcut icon' href='/favicon.svg' type='image/x-icon' />

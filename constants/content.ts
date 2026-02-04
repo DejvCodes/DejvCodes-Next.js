@@ -1,4 +1,4 @@
-import {BioBox, DailyEssential, Experience, HeroContent, NavLink, Project, SkillIcon, SocialLink, StatsBox} from '../types/types';
+import {BioBox, ContactContent, DailyEssential, Experience, FooterContent, HeroContent, NavLink, Project, SkillIcon, SocialLink, StatsBox} from '../types/types';
 
 import {
 	SiJavascript,
@@ -13,7 +13,7 @@ import {
 	SiFigma,
 	SiCypress
 } from 'react-icons/si';
-import {VscVscode} from "react-icons/vsc";
+import {VscVscode} from 'react-icons/vsc';
 
 export const NAV_LINKS: NavLink[] = [
 	{ id: 1, path: '#home', text: 'Home' },
@@ -84,18 +84,18 @@ export const EXPERIENCE: Experience[] = [
 ];
 
 export const SKILLS_ICONS: SkillIcon[] = [
-	{ icon: SiJavascript, language: "JavaScript" },
-	{ icon: SiTypescript, language: "TypeScript" },
-	{ icon: SiReact, language: "React" },
-	{ icon: SiNextdotjs, language: "Next.js" },
-	{ icon: SiVuedotjs, language: "Vue 3" },
-	{ icon: SiNuxtdotjs, language: "Nuxt 3" },
-	{ icon: SiTailwindcss, language: "Tailwind" },
-	{ icon: SiVite, language: "Vite" },
-	{ icon: SiGitlab, language: "Gitlab" },
-	{ icon: VscVscode, language: "VS Code" },
-	{ icon: SiFigma, language: "Figma" },
-	{ icon: SiCypress, language: "Cypress" },
+	{ icon: SiJavascript, language: 'JavaScript' },
+	{ icon: SiTypescript, language: 'TypeScript' },
+	{ icon: SiReact, language: 'React' },
+	{ icon: SiNextdotjs, language: 'Next.js' },
+	{ icon: SiVuedotjs, language: 'Vue 3' },
+	{ icon: SiNuxtdotjs, language: 'Nuxt 3' },
+	{ icon: SiTailwindcss, language: 'Tailwind' },
+	{ icon: SiVite, language: 'Vite' },
+	{ icon: SiGitlab, language: 'Gitlab' },
+	{ icon: VscVscode, language: 'VS Code' },
+	{ icon: SiFigma, language: 'Figma' },
+	{ icon: SiCypress, language: 'Cypress' },
 ];
 
 export const PROJECTS: Project[] = [
@@ -113,18 +113,11 @@ export const PROJECTS: Project[] = [
 	}
 ];
 
-export const CONTACT_CONTENT = {
-	heading: 'Interested in working together?',
-	description: "Available for new projects - let’s build something great.",
-	buttonText: 'Get in touch',
-	buttonLink: 'mailto:info@dejvcodes.com'
-};
-
 // icons
-import {FaGithub} from "react-icons/fa6"
-import {FaLinkedin} from "react-icons/fa6"
-import {FaEnvelope} from "react-icons/fa"
-import {FaInstagram} from "react-icons/fa"
+import {FaGithub} from 'react-icons/fa6'
+import {FaLinkedin} from 'react-icons/fa6'
+import {FaEnvelope} from 'react-icons/fa'
+import {FaInstagram} from 'react-icons/fa'
 
 export const SOCIAL_LINKS: SocialLink[] = [
 	{ name: 'Instagram', url: 'https://www.instagram.com/dejvcodes/', icon: FaInstagram, width: 8, height: 8 },
@@ -133,7 +126,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
 	{ name: 'Email', url: 'mailto:info@dejvcodes.com', icon: FaEnvelope, width: 8, height: 8 },
 ];
 
-export const FOOTER_CONTENT = {
+export const FOOTER_CONTENT: FooterContent = {
 	name: 'David Kalmus',
 	role: 'Medior Front-end Developer',
 	location: 'Pardubice, Czech Republic',
@@ -145,16 +138,36 @@ export const FOOTER_CONTENT = {
 	year: new Date().getFullYear()
 };
 
-// <div className="max-w-6xl mx-auto mt-16 sm:mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-slate-800/50">
+export const CONTACT_CONTENT: ContactContent = {
+	heading: 'Interested in working together?',
+	description: "Available for new projects - let's build something great.",
+	form: {
+		nameLabel: 'Name',
+		namePlaceholder: 'Your name',
+		emailLabel: 'Email',
+		emailPlaceholder: 'your@email.com',
+		subjectLabel: 'Subject',
+		subjectPlaceholder: 'Project inquiry',
+		messageLabel: 'Message',
+		messagePlaceholder: 'Tell me about your project...',
+		submitButton: 'Send Message',
+		submitButtonLoading: 'Sending...',
+		successMessage: 'Thanks! Your message has been sent.',
+		errorMessage: 'Something went wrong. Please try again later.'
+	},
+	email: 'info@dejvcodes.com'
+};
+
+// <div className='max-w-6xl mx-auto mt-16 sm:mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-slate-800/50'>
 //   {[
 //     { label: 'Years Experience', value: '4+' },
 //     { label: 'Completed Projects', value: '24+' },
 //     { label: 'Happy Clients', value: '18+' },
 //     { label: 'Lines of Code', value: '500k+' },
 //   ].map((stat) => (
-//     <div key={stat.label} className="space-y-1">
-//       <div className="text-3xl font-bold text-white">{stat.value}</div>
-//       <div className="text-xs uppercase tracking-widest text-slate-500 font-semibold">{stat.label}</div>
+//     <div key={stat.label} className='space-y-1'>
+//       <div className='text-3xl font-bold text-white'>{stat.value}</div>
+//       <div className='text-xs uppercase tracking-widest text-slate-500 font-semibold'>{stat.label}</div>
 //     </div>
 //   ))}
 // </div>

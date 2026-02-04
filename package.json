@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "postbuild": "cp .htaccess out/.htaccess",
+    "postbuild": "cp .htaccess out/.htaccess && cp form.php out/form.php && cp form-token.php out/form-token.php",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

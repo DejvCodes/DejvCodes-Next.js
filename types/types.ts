@@ -64,7 +64,47 @@ export interface SocialLink {
 
 export interface ContactContent {
 	heading: string;
-	subheading: string;
-	buttonText: string;
+	description: string;
+	form: {
+		nameLabel: string;
+		namePlaceholder: string;
+		emailLabel: string;
+		emailPlaceholder: string;
+		subjectLabel: string;
+		subjectPlaceholder: string;
+		messageLabel: string;
+		messagePlaceholder: string;
+		submitButton: string;
+		submitButtonLoading: string;
+		successMessage: string;
+		errorMessage: string;
+	};
 	email: string;
+}
+
+export interface FooterContent {
+	name: string;
+	role: string;
+	location: string;
+	ico: string;
+	copyright: string;
+	privacyLink: string;
+	privacyText: string;
+	badge: string;
+	year: number;
+}
+
+export interface FormData {
+	name: string;
+	email: string;
+	subject: string;
+	message: string;
+	website: string;
+}
+
+export enum FormStatus {
+	IDLE = 'idle',
+	LOADING = 'loading',
+	SUCCESS = 'success',
+	ERROR = 'error',
 }
