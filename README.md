@@ -8,11 +8,12 @@ The site features a stunning 3D starfield background created with Three.js for a
 • **About Section** – Personal information and professional background. <br>
 • **Skills Section** – Display of technical skills and expertise. <br>
 • **Projects Section** – Showcase of completed projects and work samples. <br>
-• **Contact Section** – Easy way for visitors to get in touch. <br>
+• **Contact Section** – Functional contact form with PHP backend processing. <br>
 • **Responsive Design** – Fully responsive layout that works on all devices. <br>
 • **3D Starfield Background** – Interactive Three.js animated background. <br>
 • **Modern UI/UX** – Built with Tailwind CSS for a clean and professional look. <br>
 • **Privacy Policy** – Dedicated privacy policy page for transparency. <br>
+• **Secure Contact Form** – PHP-powered form with CSRF protection, rate limiting, and spam prevention. <br>
 
 ## 🏃🏻 How to Run this App  
 1. Clone the repository: <br>
@@ -39,6 +40,7 @@ app/
 components/
 ├── About.tsx            # About section component
 ├── Contact.tsx          # Contact section component
+├── ContactForm.tsx      # Contact form component
 ├── Footer.tsx           # Footer component
 ├── Header.tsx           # Header component
 ├── Hero.tsx             # Hero section component
@@ -54,6 +56,9 @@ types/
 └── types.ts             # TypeScript type definitions
 
 public/                  # Static assets (images, icons, favicon)
+
+form.php                 # Contact form backend with validation
+form-token.php           # CSRF token generation
 .editorconfig            # Editor configuration
 ```
 
