@@ -66,4 +66,4 @@ form-token.php           # CSRF token generation
 <a href="https://dejvcodes.com/">DejvCodes</a>
 
 ## 🔐 License
-[MIT License](LICENSE)
+[MIT License](LICENSE) 
