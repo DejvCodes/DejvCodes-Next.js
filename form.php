@@ -4,7 +4,7 @@ declare(strict_types=1);
 session_set_cookie_params([
   'lifetime' => 0,
   'path' => '/',
-  'domain' => $_SERVER['HTTP_HOST'] ?? '',
+  // 'domain' => $_SERVER['HTTP_HOST'] ?? '',
   'secure' => true,     // only over HTTPS
   'httponly' => true,   // JS cannot access the cookie
   'samesite' => 'Lax',  // or 'Strict' (Lax is usually more practical)
@@ -30,10 +30,15 @@ $FROM = 'noreply@dejvcodes.com'; // must be your domain
 
 // --- simple anti-bot stuff ---
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-$host = $_SERVER['HTTP_HOST'] ?? '';
-if ($origin && !str_contains($origin, $host)) {
-  fail(403, 'Bad origin');
+$host   = $_SERVER['HTTP_HOST'] ?? '';
+
+if ($origin) {
+  $originHost = parse_url($origin, PHP_URL_HOST);
+  if (!$originHost || strcasecmp($originHost, $host) !== 0) {
+    fail(403, 'Bad origin');
+  }
 }
+
 
 // honeypot (field must remain empty)
 $hp = (string)($_POST['website'] ?? '');
@@ -54,6 +59,17 @@ $rateDir = __DIR__ . '/_form';
 if (!is_dir($rateDir)) {
   mkdir($rateDir, 0700, true);
 }
+
+// občasný úklid starých rate-limit souborů (např. 1x z 50 requestů)
+if (random_int(1, 50) === 1) {
+  $ttl = 7 * 24 * 60 * 60; // 7 dní
+  foreach (glob($rateDir . '/rl_*.json') as $file) {
+    if (is_file($file) && filemtime($file) < time() - $ttl) {
+      @unlink($file);
+    }
+  }
+}
+
 $rateFile = $rateDir . '/rl_' . preg_replace('~[^a-z0-9._-]~i', '_', $ip) . '.json';
 
 $now = time();
@@ -123,5 +139,7 @@ $ok = mail(
 if (!$ok) {
   fail(500, 'Sending failed. Please try again later.');
 }
+
+unset($_SESSION['csrf']);
 
 echo json_encode(['ok' => true, 'message' => 'Thanks! Your message has been sent.'], JSON_UNESCAPED_UNICODE);

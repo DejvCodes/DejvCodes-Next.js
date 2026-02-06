@@ -161,7 +161,7 @@ const ContactForm = () => {
 						<FaCheck className='absolute w-3 h-3 text-slate-950 opacity-0 peer-checked:opacity-100 transition-opacity duration-200 pointer-events-none' />
 					</div>
 					<span>
-						I agree to the terms and conditions of the Privacy Policy. <Link
+						I agree with the <Link
 							href='/privacy-policy'
 							className='text-slate-500 hover:text-light-blue underline underline-offset-4 transition-colors'
 						>

@@ -5,7 +5,7 @@ declare(strict_types=1);
 session_set_cookie_params([
   'lifetime' => 0,
   'path' => '/',
-  'domain' => $_SERVER['HTTP_HOST'] ?? '',
+  // 'domain' => $_SERVER['HTTP_HOST'] ?? '',
   'secure' => true,     // only over HTTPS
   'httponly' => true,   // JS cannot access the cookie
   'samesite' => 'Lax',  // or 'Strict' (Lax is usually more practical)
