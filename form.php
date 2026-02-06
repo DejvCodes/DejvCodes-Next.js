@@ -76,12 +76,15 @@ file_put_contents($rateFile, json_encode($hits), LOCK_EX);
 $name = trim((string)($_POST['name'] ?? ''));
 $email = trim((string)($_POST['email'] ?? ''));
 $subject = trim((string)($_POST['subject'] ?? ''));
+$privacy = (string)($_POST['privacy-policy'] ?? '');
 $message = trim((string)($_POST['message'] ?? ''));
 
 if ($name === '' || mb_strlen($name) > 80) fail(400, 'Fill in your name.');
 if (!filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($email) > 120) fail(400, 'Invalid email.');
+if ($privacy !== 'on') fail(400, 'Please accept the privacy policy.');
 if ($subject === '' || mb_strlen($subject) > 200) fail(400, 'Fill in the subject.');
 if ($message === '' || mb_strlen($message) > 4000) fail(400, 'Message is empty / too long.');
+
 // ochrana proti header injection
 $emailSafe = str_replace(["\r", "\n"], '', $email);
 $nameSafe  = str_replace(["\r", "\n"], '', $name);
@@ -94,6 +97,7 @@ $body =
 "Name: {$nameSafe}\n" .
 "Email: {$emailSafe}\n" .
 "Subject: {$subjectSafe}\n" .
+"Privacy Accepted: {$privacy}\n" .
 "---\n" .
 $message . "\n";
 
