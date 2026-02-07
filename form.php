@@ -145,6 +145,4 @@ if (!$ok) {
   fail(500, 'Sending failed. Please try again later.');
 }
 
-unset($_SESSION['csrf']);
-
 echo json_encode(['ok' => true, 'message' => 'Thanks! Your message has been sent.'], JSON_UNESCAPED_UNICODE);
