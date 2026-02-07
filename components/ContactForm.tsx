@@ -164,6 +164,7 @@ const ContactForm = () => {
 					</div>
 					<span>
 						I agree with the <Link
+							prefetch={false}
 							href={CONTACT_CONTENT.form.privacyLink}
 							className='text-slate-500 hover:text-light-blue underline underline-offset-4 transition-colors'
 						>
