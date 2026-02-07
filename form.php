@@ -102,7 +102,7 @@ $message = trim((string)($_POST['inputMessage'] ?? ''));
 
 if ($name === '' || mb_strlen($name) > 80) fail(400, 'Fill in your name.');
 if (!filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($email) > 120) fail(400, 'Invalid email.');
-if ($privacy !== 'on') fail(400, 'Please accept the privacy policy.');
+if ($privacy !== 'agree (klient souhlasí s podmínkami ochrany osobních údajů)') fail(400, 'Please accept the privacy policy.');
 if ($subject === '' || mb_strlen($subject) > 200) fail(400, 'Fill in the subject.');
 if ($message === '' || mb_strlen($message) > 4000) fail(400, 'Message is empty / too long.');
 
