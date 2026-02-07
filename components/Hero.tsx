@@ -18,7 +18,7 @@ const Hero = () => {
 			<h1
 				className='text-3.7xl md:text-7xl font-bold tracking-tight mb-4 sm:mb-8 text-white animate-fade-in-up!'
 			>
-				Hi, I'm <span className='text-light-blue'>{HERO_CONTENT.name}</span>.
+				Hi, I&apos;m <span className='text-light-blue'>{HERO_CONTENT.name}</span>.
 				<br />
 				<span className='text-slate-400'>{HERO_CONTENT.role}</span>
 			</h1>

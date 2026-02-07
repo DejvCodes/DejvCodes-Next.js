@@ -57,7 +57,7 @@ export interface Project {
 export interface SocialLink {
 	name: string;
 	url: string;
-	icon: React.ComponentType<any>;
+	icon: IconType;
 	width: number;
 	height: number;
 }
