@@ -41,7 +41,7 @@ const ContactForm = () => {
 		formBody.append('inputSubject', formData.subject);
 		formBody.append('inputMessage', formData.message);
 		formBody.append('inputWebsite', formData.website);
-		formBody.append('inputPrivacyPolicy', formData.privacyAccepted ? 'on' : 'off');
+		formBody.append('inputPrivacyPolicy', formData.privacyAccepted ? 'agree (klient souhlasí s podmínkami ochrany osobních údajů)' : 'off');
 		formBody.append('csrf', csrf);
 
 		try {
