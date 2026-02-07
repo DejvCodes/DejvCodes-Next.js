@@ -40,15 +40,10 @@ export const metadata: Metadata = {
 	}
 }
 
-export default function RootLayout({
-	children,
-}: Readonly<{
+const RootLayout: React.FC<{
 	children: React.ReactNode;
-}>) {
-	return <html
-		lang='en'
-		data-scroll-behavior='smooth'
-	>
+}> = ({ children }) => {
+	return <html lang='en' data-scroll-behavior='smooth'>
 		<head>
 			<link rel='shortcut icon' href='/favicon.svg' type='image/x-icon' />
 		</head>
@@ -57,3 +52,5 @@ export default function RootLayout({
 		</body>
 	</html>
 };
+
+export default RootLayout;
