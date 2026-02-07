@@ -21,7 +21,7 @@ The site features a stunning 3D starfield background created with Three.js for a
     • `cd dejvcodes` <br>
 2. Install dependencies: <br>
     • `npm install` <br>
-3. Run the development server: <br>
+3. Run the development server (Next.js): <br>
     • `npm run dev` <br>
     • open `http://localhost:3000` in your browser <br>
 
@@ -59,7 +59,12 @@ public/                  # Static assets (images, icons, favicon)
 
 form.php                 # Contact form backend with validation
 form-token.php           # CSRF token generation
-.editorconfig            # Editor configuration
+.htaccess                # Apache rules for HTTPS, redirects, caching
+next.config.ts           # Next.js configuration
+eslint.config.mjs        # ESLint configuration
+postcss.config.mjs       # PostCSS/Tailwind configuration
+tsconfig.json            # TypeScript configuration
+package.json             # Project metadata and scripts
 ```
 
 ## 🌐 Live Demo

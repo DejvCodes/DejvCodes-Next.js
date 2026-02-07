@@ -67,13 +67,10 @@ export interface ContactContent {
 	description: string;
 	form: {
 		nameLabel: string;
-		namePlaceholder: string;
 		emailLabel: string;
-		emailPlaceholder: string;
 		subjectLabel: string;
-		subjectPlaceholder: string;
 		messageLabel: string;
-		messagePlaceholder: string;
+		privacyLink: string;
 		submitButton: string;
 		submitButtonLoading: string;
 		successMessage: string;

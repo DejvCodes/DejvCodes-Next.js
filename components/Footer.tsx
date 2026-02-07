@@ -18,6 +18,7 @@ const Footer = () => {
 						<div className='w-20 h-1 bg-linear-to-r from-light-blue to-transparent rounded-full' />
 					</div>
 				</ScrollReveal>
+
 				<ScrollReveal delay={100}>
 					<div className='space-y-4 md:text-right flex flex-col md:items-end md:justify-center'>
 						<p className='text-lg text-slate-400'>{FOOTER_CONTENT.role}</p>
@@ -28,6 +29,7 @@ const Footer = () => {
 					</div>
 				</ScrollReveal>
 			</div>
+
 			<ScrollReveal delay={200}>
 				<div className='border-t border-slate-800/50 pt-8'>
 					<div className='flex flex-col md:flex-row justify-between items-center gap-4'>

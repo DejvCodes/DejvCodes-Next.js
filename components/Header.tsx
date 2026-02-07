@@ -143,6 +143,14 @@ const Header = () => {
 				<div className={`w-6.25 h-0.75 bg-white transition-all duration-400 ${openMenu ? 'rotate-45 -translate-y-2' : ''}`} />
 			</div>
 		</div>
+
+		{/* Mobile Overlay */}
+		<div
+			className={`fixed md:hidden inset-0 bg-black/40 transition-opacity -z-1
+				${openMenu ? 'opacity-100' : 'pointer-events-none opacity-0'}
+			`}
+			onClick={() => setOpenMenu(false)}
+		/>
 	</header>
 };
 

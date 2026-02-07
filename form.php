@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
+// form.php - simple contact form handler with anti-spam and security measures
 session_set_cookie_params([
   'lifetime' => 0,
   'path' => '/',
-  // 'domain' => $_SERVER['HTTP_HOST'] ?? '',
   'secure' => true,     // only over HTTPS
   'httponly' => true,   // JS cannot access the cookie
   'samesite' => 'Lax',  // or 'Strict' (Lax is usually more practical)
@@ -39,9 +39,8 @@ if ($origin) {
   }
 }
 
-
 // honeypot (field must remain empty)
-$hp = (string)($_POST['website'] ?? '');
+$hp = (string)($_POST['inputWebsite'] ?? '');
 if (trim($hp) !== '') {
   fail(400, 'Spam detected');
 }
@@ -60,9 +59,9 @@ if (!is_dir($rateDir)) {
   mkdir($rateDir, 0700, true);
 }
 
-// občasný úklid starých rate-limit souborů (např. 1x z 50 requestů)
+// clean up old rate limit files (7+ days)
 if (random_int(1, 50) === 1) {
-  $ttl = 7 * 24 * 60 * 60; // 7 dní
+  $ttl = 7 * 24 * 60 * 60; // 7 days
   foreach (glob($rateDir . '/rl_*.json') as $file) {
     if (is_file($file) && filemtime($file) < time() - $ttl) {
       @unlink($file);
@@ -77,23 +76,29 @@ $window = 60;     // 60s window
 $maxReq = 5;      // max 5 requests / min / IP
 
 $hits = [];
+
 if (is_file($rateFile)) {
   $hits = json_decode((string)file_get_contents($rateFile), true);
   if (!is_array($hits)) $hits = [];
 }
+
 $hits = array_values(array_filter($hits, fn($t) => is_int($t) && $t > ($now - $window)));
+
+// if we have too many hits in the window, block
 if (count($hits) >= $maxReq) {
   fail(429, 'Please try again in a moment.');
 }
+
 $hits[] = $now;
+
 file_put_contents($rateFile, json_encode($hits), LOCK_EX);
 
 // --- input validation ---
-$name = trim((string)($_POST['name'] ?? ''));
-$email = trim((string)($_POST['email'] ?? ''));
-$subject = trim((string)($_POST['subject'] ?? ''));
-$privacy = (string)($_POST['privacy-policy'] ?? '');
-$message = trim((string)($_POST['message'] ?? ''));
+$name = trim((string)($_POST['inputName'] ?? ''));
+$email = trim((string)($_POST['inputEmail'] ?? ''));
+$subject = trim((string)($_POST['inputSubject'] ?? ''));
+$privacy = (string)($_POST['inputPrivacyPolicy'] ?? '');
+$message = trim((string)($_POST['inputMessage'] ?? ''));
 
 if ($name === '' || mb_strlen($name) > 80) fail(400, 'Fill in your name.');
 if (!filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($email) > 120) fail(400, 'Invalid email.');
@@ -101,7 +106,7 @@ if ($privacy !== 'on') fail(400, 'Please accept the privacy policy.');
 if ($subject === '' || mb_strlen($subject) > 200) fail(400, 'Fill in the subject.');
 if ($message === '' || mb_strlen($message) > 4000) fail(400, 'Message is empty / too long.');
 
-// ochrana proti header injection
+// --- sanitize for email headers (prevent header injection) ---
 $emailSafe = str_replace(["\r", "\n"], '', $email);
 $nameSafe  = str_replace(["\r", "\n"], '', $name);
 $subjectSafe = str_replace(["\r", "\n"], '', $subject);

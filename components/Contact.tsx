@@ -30,7 +30,7 @@ const Contact = () => {
 			<ScrollReveal delay={300}>
 				<div className='flex items-center justify-center gap-10 sm:gap-17 mt-14 2xl:mt-20'>
 					{SOCIAL_LINKS.map((oneLink, index) => {
-						const { url, icon: Icon, name } = oneLink;
+						const {url, icon: Icon, name} = oneLink;
 
 						return <Link
 							key={index}
