@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const NotFound = () => {
 	return <div
-		className='min-h-screen flex items-center justify-center bg-linear-to-b from-black via-slate-60 to-slate-950'
+		className='min-h-screen flex items-center justify-center bg-linear-to-b from-black via-slate-900 to-slate-950'
 	>
 		<div className='text-center px-4'>
 			<h1 className='text-9xl text-white font-bold mb-4'>404</h1>

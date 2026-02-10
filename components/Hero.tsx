@@ -16,7 +16,7 @@ const Hero = () => {
 			</div>
 
 			<h1
-				className='text-3.7xl md:text-7xl font-bold tracking-tight mb-4 sm:mb-8 text-white animate-fade-in-up!'
+				className='text-3.7xl md:text-7xl font-bold tracking-tight mb-4 sm:mb-8 text-white animate-fade-in-up'
 			>
 				Hi, I&apos;m <span className='text-light-blue'>{HERO_CONTENT.name}</span>.
 				<br />
@@ -37,7 +37,7 @@ const Hero = () => {
 				<Link
 					href='#projects'
 					scroll={false}
-					className='w-60! flex items-center justify-center sm:w-auto px-8 py-3 bg-light-blue text-slate-950 font-semibold rounded-xl hover:bg-slate-200 transition-all gap-2 group'
+					className='w-60 flex items-center justify-center sm:w-auto px-8 py-3 bg-light-blue text-slate-950 font-semibold rounded-xl hover:bg-slate-200 transition-all gap-2 group'
 					onClick={(e) => {
 						e.preventDefault();
 						document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
@@ -50,7 +50,7 @@ const Hero = () => {
 				<Link
 					href='#skills'
 					scroll={false}
-					className='w-60! flex items-center justify-center sm:w-auto px-8 py-3 bg-slate-900/50 text-white font-semibold rounded-xl border border-slate-700 hover:bg-slate-800 transition-all gap-2'
+					className='w-60 flex items-center justify-center sm:w-auto px-8 py-3 bg-slate-900/50 text-white font-semibold rounded-xl border border-slate-700 hover:bg-slate-800 transition-all gap-2'
 					onClick={(e) => {
 						e.preventDefault();
 						document.querySelector('#skills')?.scrollIntoView({ behavior: 'smooth' });

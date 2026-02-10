@@ -42,7 +42,12 @@ export const BIO_BOX: BioBox = {
 	]
 }
 
-const age: number = new Date().getFullYear() - 2002;
+const birthDate = new Date('2002-07-17T00:00:00');
+const today = new Date();
+const age: number = today.getFullYear() - birthDate.getFullYear() - (
+	today.getMonth() < birthDate.getMonth() ||
+	(today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate()) ? 1 : 0
+);
 
 export const STATS_BOX: StatsBox = {
 	location: 'Pardubice, Czechia',
