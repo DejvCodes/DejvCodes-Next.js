@@ -39,7 +39,7 @@ const Skills = () => {
 					<Link
 						href='#projects'
 						scroll={false}
-						className='w-52 sm:w-60 flex items-center justify-center bg-slate-900/50 text-light-blue font-semibold rounded-xl border-2 border-light-blue/40 hover:bg-slate-800 transition-all px-8 py-3'
+						className='w-52! sm:w-60! flex items-center justify-center bg-slate-900/50 text-light-blue font-semibold rounded-xl border-2 border-light-blue/40 hover:bg-slate-800 transition-all px-8 py-3'
 						onClick={(e) => {
 							e.preventDefault();
 							document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
