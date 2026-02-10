@@ -5,9 +5,9 @@ html {
 :root {
   --background: #000000;
   --text-white: #FFFFFF;
-  --slate-960: #030507; 
+  --slate-960: #030507;
   --light-blue: #0D9AFF;
-  
+
   /* --light-blue: #0083FF; */
   /* --light-blue: #38BDF8; */
   /* --light-blue: #038BEC; */
@@ -36,6 +36,18 @@ body {
   background: var(--background);
   font-family: var(--font-primary);
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: var(--text-white);
+  -webkit-box-shadow: 0 0 0 1000px rgba(15, 23, 42, 0.5) inset;
+  box-shadow: 0 0 0 1000px rgba(15, 23, 42, 0.5) inset;
+  background-color: transparent;
+  caret-color: var(--text-white);
+  transition: background-color 5000s ease-in-out 0s;
+}
 section {
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -47,7 +59,7 @@ section {
   transition: all 0.2s linear;
 }
 .link a:hover {
-  color: var(--light-blue); 
+  color: var(--light-blue);
 }
 .link a::after {
   position: absolute;
@@ -146,11 +158,11 @@ section {
 .animate-scale-in {
   animation: scaleIn 0.4s ease-out;
 }
-/* 
+/*
   @media (prefers-color-scheme: dark) {
     :root {
       --background: #000000;
       --foreground: #ededed;
     }
-  } 
+  }
 */

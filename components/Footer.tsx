@@ -38,7 +38,6 @@ const Footer = () => {
 								&copy; {FOOTER_CONTENT.year} {FOOTER_CONTENT.copyright}
 							</p>
 							<Link
-								prefetch={false}
 								href={FOOTER_CONTENT.privacyLink}
 								className='text-slate-500 hover:text-light-blue text-sm transition-colors'
 							>

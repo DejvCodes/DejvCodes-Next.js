@@ -80,7 +80,6 @@ const ContactForm = () => {
 	const inputClass = 'w-full text-base text-white bg-slate-900/50 border border-slate-700/60 rounded-xl placeholder-slate-500 focus:outline-none focus:border-light-blue focus:ring-1 focus:ring-light-blue/50 transition-all duration-200 hover:border-slate-600 autofill:bg-slate-900/50 autofill:text-white autofill:shadow-[inset_0_0_0px_1000px_rgb(15_23_42_/_0.5)] px-5 py-4';
 
 	return <div className='w-full'>
-		<style jsx>{`input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {-webkit-background-clip: text; -webkit-text-fill-color: #ffffff; transition: background-color 5000s ease-in-out 0s;}`}</style>
 		{/* Form */}
 		<form
 			id='form'
@@ -164,7 +163,6 @@ const ContactForm = () => {
 					</div>
 					<span>
 						I agree with the <Link
-							prefetch={false}
 							href={CONTACT_CONTENT.form.privacyLink}
 							className='text-slate-500 hover:text-light-blue underline underline-offset-4 transition-colors'
 						>

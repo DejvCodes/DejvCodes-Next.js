@@ -11,7 +11,7 @@ const Contact = () => {
 	>
 		<div className='relative max-w-4xl text-center mx-auto px-4 z-10'>
 			<ScrollReveal>
-				<h2 className='text-3xl md:text-5xl font-bold text-white mb-8 2xl:mb-14'>
+				<h2 className='text-3xl md:text-5xl font-bold text-white mb-8 2xl:mb-10'>
 					{CONTACT_CONTENT.heading}
 				</h2>
 			</ScrollReveal>
