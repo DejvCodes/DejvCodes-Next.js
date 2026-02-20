@@ -8,7 +8,7 @@ const Hero = () => {
 		id='home'
 		className='relative min-h-svh flex items-center justify-center bg-linear-to-b from-black via-slate-960 to-slate-950 overflow-hidden pt-7'
 	>
-		<div className='relative max-w-7xl text-center mx-auto px-4 sm:px-6 lg:px-8 z-10'>
+		<div className='relative max-w-(--max-width) text-center px-4 sm:px-6 lg:px-8 z-10'>
 			<div className='inline-block mb-3 sm:mb-6 px-4 py-1.5 rounded-full bg-slate-900/10 backdrop-blur-sm animate-fade-in-down'>
 				<span className='text-sm sm:text-xl xl:text-base font-medium bg-linear-to-r from-light-blue to-purple-500 bg-clip-text text-transparent'>
 					{HERO_CONTENT.badge}

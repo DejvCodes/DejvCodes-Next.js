@@ -48,7 +48,7 @@ const Header = () => {
       ${scrolled ? 'md:h-17 bg-slate-950/70 backdrop-blur-xl border-b' : 'bg-background md:h-25'}
     `}
 	>
-		<div className='w-full max-w-(--max-width) h-full flex items-center justify-between px-4 md:px-6 lg:px-17'>
+		<div className='w-full max-w-(--max-width) h-full flex items-center justify-between mx-auto px-4 sm:px-6 lg:px-8'>
 
 			{/* Logo */}
 			<div className='font-primary py-2 mb-0.5 cursor-pointer'>
@@ -70,7 +70,7 @@ const Header = () => {
 				</Link>
 			</div>
 
-			{/* Navigation Desktop */}
+			{/* Desktop Nav */}
 			<nav className='navigation max-[700]:hidden'>
 				<ul className='flex items-center gap-4 lg:gap-6'>
 					{NAV_LINKS.map((oneLink) => {
@@ -97,7 +97,7 @@ const Header = () => {
 				</ul>
 			</nav>
 
-			{/* Mobile Menu */}
+			{/* Mobile Nav */}
 			<nav className='hidden max-[700px]:block'>
 				<ul className={`
           fixed top-0 right-0 w-[70%] max-[570px]:w-[65%] max-[370px]:w-[75%] max-[250px]:w-[90%]

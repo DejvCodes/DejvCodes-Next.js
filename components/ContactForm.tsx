@@ -41,7 +41,7 @@ const ContactForm = () => {
 		formBody.append('inputSubject', formData.subject);
 		formBody.append('inputMessage', formData.message);
 		formBody.append('inputWebsite', formData.website);
-		formBody.append('inputPrivacyPolicy', formData.privacyAccepted ? 'agree (klient souhlasí s podmínkami ochrany osobních údajů)' : 'off');
+		formBody.append('inputPrivacyPolicy', formData.privacyAccepted ? 'agree' : 'off');
 		formBody.append('csrf', csrf);
 
 		try {
@@ -164,7 +164,7 @@ const ContactForm = () => {
 					<span>
 						I agree with the <Link
 							href={CONTACT_CONTENT.form.privacyLink}
-							className='text-slate-500 hover:text-light-blue underline underline-offset-4 transition-colors'
+							className='text-slate-400/80 hover:text-light-blue hover:underline underline-offset-4 transition-colors'
 						>
 							Privacy Policy
 						</Link>

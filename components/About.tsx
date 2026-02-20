@@ -16,7 +16,7 @@ const About = () => {
 		id='about'
 		className='relative bg-slate-900/30 py-24'
 	>
-		<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+		<div className='max-w-(--max-width) mx-auto px-4 sm:px-6 lg:px-8'>
 			<ScrollReveal>
 				<div className='mb-7'>
 					<h2 className='text-white font-bold text-3xl md:text-4xl mb-2'>

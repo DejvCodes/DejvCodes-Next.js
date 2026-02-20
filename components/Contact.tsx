@@ -9,7 +9,7 @@ const Contact = () => {
 		id='contact'
 		className='relative bg-slate-900/40 overflow-hidden py-20 2xl:py-24'
 	>
-		<div className='relative max-w-4xl text-center mx-auto px-4 z-10'>
+		<div className='relative max-w-(--max-width) text-center mx-auto px-4 sm:px-6 lg:px-8 z-10'>
 			<ScrollReveal>
 				<h2 className='text-3xl md:text-5xl font-bold text-white mb-8 2xl:mb-10'>
 					{CONTACT_CONTENT.heading}

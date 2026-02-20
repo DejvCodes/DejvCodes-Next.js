@@ -8,7 +8,7 @@ const Skills = () => {
 		id='skills'
 		className='relative bg-slate-900/40 py-17 sm:py-24 overflow-hidden'
 	>
-		<div className='max-w-7xl grid lg:grid-cols-2 items-start mx-auto px-4 sm:px-6 lg:px-8 gap-8 sm:gap-12 z-10'>
+		<div className='max-w-(--max-width) grid lg:grid-cols-2 items-start mx-auto px-4 sm:px-6 lg:px-8 gap-8 sm:gap-12 z-10'>
 			<ScrollReveal delay={100}>
 				<div className='space-y-3 sm:space-y-4'>
 					<h2 className='text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white'>
