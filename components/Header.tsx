@@ -1,10 +1,10 @@
 'use client';
 import Link from 'next/link';
-import {Code2} from 'lucide-react';
-import {NAV_LINKS} from '@/constants/content';
 import {useEffect, useState} from 'react';
+import {HEADER_CONTENT, NAV_LINKS} from '@/constants/content';
 
 const Header = () => {
+	const LogoIcon = HEADER_CONTENT.logoIcon;
 	const [openMenu, setOpenMenu] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
 	const [activeSection, setActiveSection] = useState('home');
@@ -63,10 +63,10 @@ const Header = () => {
 					}}
 				>
 					<div className='bg-light-blue/12 rounded-lg p-2 mr-2'>
-						<Code2 className='h-6 w-6 text-light-blue' />
+						<LogoIcon className='h-6 w-6 text-light-blue' />
 					</div>
-					Dejv<span className='text-light-blue'>Codes</span>
-					<span className='animate-dot absolute bottom-1 -right-2 text-3xl'>.</span>
+					{HEADER_CONTENT.brandPrimary}<span className='text-light-blue'>{HEADER_CONTENT.brandAccent}</span>
+					<span className='animate-dot absolute bottom-1 -right-2 text-3xl'>{HEADER_CONTENT.dotSymbol}</span>
 				</Link>
 			</div>
 

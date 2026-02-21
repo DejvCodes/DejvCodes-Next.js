@@ -1,17 +1,13 @@
 'use client';
 import ScrollReveal from './ScrollReveal';
-import {BIO_BOX, STATS_BOX, DAILY_ESSENTIALS, EXPERIENCE} from '../constants/content';
-import {Briefcase, Terminal, Globe, Coffee, Code, Dumbbell, Plane, Brain, Sparkles} from 'lucide-react';
-
-const iconMap = {
-	Brain,
-	Coffee,
-	Code,
-	Dumbbell,
-	Plane
-};
+import {ABOUT_CONTENT, BIO_BOX, STATS_BOX, DAILY_ESSENTIALS, EXPERIENCE} from '../constants/content';
 
 const About = () => {
+	const BioIcon = ABOUT_CONTENT.bioIcon;
+	const StatsIcon = ABOUT_CONTENT.statsIcon;
+	const DailyEssentialsIcon = ABOUT_CONTENT.dailyEssentialsIcon;
+	const WorkHistoryIcon = ABOUT_CONTENT.workHistoryIcon;
+
 	return <section
 		id='about'
 		className='relative bg-slate-900/30 py-24'
@@ -20,7 +16,7 @@ const About = () => {
 			<ScrollReveal>
 				<div className='mb-7'>
 					<h2 className='text-white font-bold text-3xl md:text-4xl mb-2'>
-						About <span className='text-light-blue'>Me</span>
+						{ABOUT_CONTENT.title} <span className='text-light-blue'>{ABOUT_CONTENT.titleAccent}</span>
 					</h2>
 					<div className='w-20 h-1.5 bg-light-blue rounded-full' />
 				</div>
@@ -31,7 +27,7 @@ const About = () => {
 				<ScrollReveal delay={100} className='md:col-span-2'>
 					<div className='h-full bg-slate-950 border border-slate-800 rounded-3xl hover:border-slate-700 transition-colors p-7 md:p-8'>
 						<div className='flex items-center gap-2 mb-4'>
-							<Terminal className='w-6 h-6 text-light-blue' />
+							<BioIcon className='w-6 h-6 text-light-blue' />
 							<h3 className='text-xl text-white font-bold'>
 								{BIO_BOX.title}
 							</h3>
@@ -51,25 +47,25 @@ const About = () => {
 						<div className='absolute top-0 right-0 bg-light-blue/7 rounded-full blur-3xl group-hover:bg-light-blue/15 transition-all p-32 -mr-16 -mt-16' />
 						<div>
 							<div className='flex items-center text-light-blue gap-2 mb-3'>
-								<Globe className='w-5 h-5' />
-								<span className='font-medium'>Based in</span>
+								<StatsIcon className='w-5 h-5' />
+								<span className='font-medium'>{ABOUT_CONTENT.basedInLabel}</span>
 							</div>
 							<p className='text-lg text-white font-bold font-mono mb-2'>
 								{STATS_BOX.location}
 							</p>
 							<div className='grid grid-cols-2 gap-4 mb-3'>
 								<div>
-									<p className='text-sm text-slate-500'>Name</p>
+									<p className='text-sm text-slate-500'>{ABOUT_CONTENT.nameLabel}</p>
 									<h2 className='text-white font-mono'>{STATS_BOX.name}</h2>
 								</div>
 								<div>
-									<p className='text-sm text-slate-500'>Age</p>
+									<p className='text-sm text-slate-500'>{ABOUT_CONTENT.ageLabel}</p>
 									<p className='text-white font-mono'>{STATS_BOX.age}</p>
 								</div>
 							</div>
 						</div>
 						<div>
-							<p className='text-slate-500 text-sm'>Timezone</p>
+							<p className='text-slate-500 text-sm'>{ABOUT_CONTENT.timezoneLabel}</p>
 							<p className='text-white font-mono'>{STATS_BOX.timezone}</p>
 						</div>
 					</div>
@@ -79,12 +75,12 @@ const About = () => {
 				<ScrollReveal delay={300} className='md:col-span-1'>
 					<div className='h-full flex flex-col bg-slate-950 border border-slate-800 rounded-3xl hover:border-slate-700 transition-colors p-7 md:p-8'>
 						<div className='flex items-center gap-2 mb-6'>
-							<Sparkles className='w-6 h-6 text-light-blue' />
-							<h3 className='text-xl text-white font-bold'>Daily Essentials</h3>
+							<DailyEssentialsIcon className='w-6 h-6 text-light-blue' />
+							<h3 className='text-xl text-white font-bold'>{ABOUT_CONTENT.dailyEssentialsTitle}</h3>
 						</div>
 						<div className='space-y-6'>
 							{DAILY_ESSENTIALS.map((item, index) => {
-								const Icon = iconMap[item.icon as keyof typeof iconMap];
+								const Icon = item.icon;
 
 								return <div key={index}>
 									<div className='flex items-center justify-between mb-2'>
@@ -110,8 +106,8 @@ const About = () => {
 				<ScrollReveal delay={400} className='md:col-span-2'>
 					<div className='h-full bg-slate-950 border border-slate-800 rounded-3xl hover:border-slate-700 transition-colors p-7 md:p-8'>
 						<div className='flex items-center gap-2 mb-5'>
-							<Briefcase className='w-6 h-6 text-light-blue' />
-							<h3 className='text-xl text-white font-bold'>Work History</h3>
+							<WorkHistoryIcon className='w-6 h-6 text-light-blue' />
+							<h3 className='text-xl text-white font-bold'>{ABOUT_CONTENT.workHistoryTitle}</h3>
 						</div>
 						<div className='space-y-5 md:space-y-8'>
 							{EXPERIENCE.map((job) => {

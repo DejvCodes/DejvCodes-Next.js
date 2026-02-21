@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import {SKILLS_ICONS} from '@/constants/content';
+import {SKILLS_CONTENT, SKILLS_ICONS} from '@/constants/content';
 import ScrollReveal from './ScrollReveal';
 
 const Skills = () => {
@@ -12,28 +12,16 @@ const Skills = () => {
 			<ScrollReveal delay={100}>
 				<div className='space-y-3 sm:space-y-4'>
 					<h2 className='text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white'>
-						Skills & <br />
-						<span className='text-light-blue'>Experience</span>
+						{SKILLS_CONTENT.title} <br />
+						<span className='text-light-blue'>{SKILLS_CONTENT.titleAccent}</span>
 					</h2>
 
 					<p className='text-slate-300 md:text-lg leading-relaxed lg:max-w-xl'>
-						I build production-ready web apps with{' '}
-						<span className='text-light-blue font-semibold'>Next.js</span> and{' '}
-						<span className='text-light-blue font-semibold'>React</span>,
-						writing type-safe code with{' '}
-						<span className='text-light-blue font-semibold'>TypeScript </span>
-						and creating responsive UI with{' '}
-						<span className='text-light-blue font-semibold'>Tailwind CSS</span>.
-						I also work daily with{' '}
-						<span className='text-light-blue font-semibold'>Vue 3</span> and{' '}
-						<span className='text-light-blue font-semibold'>Nuxt 3</span> on an
-						e-commerce app.
+						{SKILLS_CONTENT.description}
 					</p>
 
 					<p className='text-sm md:text-base text-slate-500 leading-relaxed mb-4 sm:mb-5'>
-						Every project is optimized for performance, SEO and real-world
-						usability - delivering fast, accessible experiences that work
-						flawlessly across all devices.
+						{SKILLS_CONTENT.summary}
 					</p>
 
 					<Link
@@ -46,7 +34,7 @@ const Skills = () => {
 							history.replaceState(null, '', '#projects'); // update URL without reloading
 						}}
 					>
-						View Projects
+						{SKILLS_CONTENT.projectsButton}
 					</Link>
 				</div>
 			</ScrollReveal>

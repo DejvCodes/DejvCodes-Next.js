@@ -1,9 +1,11 @@
 'use client';
 import Link from 'next/link';
 import {HERO_CONTENT} from '../constants/content';
-import {ArrowRight, ArrowDown} from 'lucide-react';
 
 const Hero = () => {
+	const PrimaryIcon = HERO_CONTENT.primaryButtonIcon;
+	const SecondaryIcon = HERO_CONTENT.secondaryButtonIcon;
+
 	return <section
 		id='home'
 		className='relative min-h-svh flex items-center justify-center bg-linear-to-b from-black via-slate-960 to-slate-950 overflow-hidden pt-7'
@@ -18,7 +20,7 @@ const Hero = () => {
 			<h1
 				className='text-3.7xl md:text-7xl font-bold tracking-tight mb-4 sm:mb-8 text-white animate-fade-in-up'
 			>
-				Hi, I&apos;m <span className='text-light-blue'>{HERO_CONTENT.name}</span>.
+				{HERO_CONTENT.introPrefix} <span className='text-light-blue'>{HERO_CONTENT.name}</span>.
 				<br />
 				<span className='text-slate-400'>{HERO_CONTENT.role}</span>
 			</h1>
@@ -45,7 +47,7 @@ const Hero = () => {
 					}}
 				>
 					{HERO_CONTENT.viewWorkButton}
-					<ArrowRight className='w-4 h-4 group-hover:translate-x-1 transition-transform' />
+					<PrimaryIcon className='w-4 h-4 group-hover:translate-x-1 transition-transform' />
 				</Link>
 				<Link
 					href='#skills'
@@ -57,7 +59,7 @@ const Hero = () => {
 						history.replaceState(null, '', '#skills'); // update URL without reloading
 					}}
 				>
-					<ArrowDown className='w-4 h-4' />
+					<SecondaryIcon className='w-4 h-4' />
 					{HERO_CONTENT.skillsButton}
 				</Link>
 			</div>

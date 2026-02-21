@@ -1,5 +1,23 @@
 RewriteEngine On
 
+# Security Headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# PHP form endpoints - žádná cache
+<FilesMatch "^(form\.php|form-token\.php)$">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </IfModule>
+</FilesMatch>
+
 # 1) Canonical: www.dejvcodes.com -> dejvcodes.com (rovnou na https)
 RewriteCond %{HTTP_HOST} ^www\.dejvcodes\.com$ [NC]
 RewriteRule ^ https://dejvcodes.com%{REQUEST_URI} [R=301,L]
@@ -28,15 +46,6 @@ RewriteRule ^ %{REQUEST_URI}/ [R=301,L]
 # error page
 ErrorDocument 404 /404.html
 
-# PHP form endpoints - žádná cache
-<FilesMatch "^(form\.php|form-token\.php)$">
-  <IfModule mod_headers.c>
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-    Header set Pragma "no-cache"
-    Header set Expires "0"
-  </IfModule>
-</FilesMatch>
-
 # BROWSER CACHING
 <IfModule mod_expires.c>
   ExpiresActive On
@@ -63,6 +72,7 @@ ErrorDocument 404 /404.html
   ExpiresByType video/webm "access plus 1 year"
 </IfModule>
 
+# CACHE CONTROL
 <IfModule mod_headers.c>
   # dlouha cache pro statiku (doporučuju vyhodit txt)
   <FilesMatch "\.(css|js|png|jpg|jpeg|webp|avif|svg|ico|gif|woff|woff2|ttf|otf|mp4|webm)$">

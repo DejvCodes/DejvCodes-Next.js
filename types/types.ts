@@ -1,4 +1,5 @@
 import {IconType} from 'react-icons';
+import {LucideIcon} from 'lucide-react';
 
 export interface NavLink {
 	id: number;
@@ -6,13 +7,23 @@ export interface NavLink {
 	text: string;
 }
 
+export interface HeaderContent {
+	brandPrimary: string;
+	brandAccent: string;
+	dotSymbol: string;
+	logoIcon: LucideIcon;
+}
+
 export interface HeroContent {
 	badge: string;
+	introPrefix: string;
 	name: string;
 	role: string;
 	description: string;
 	viewWorkButton: string;
 	skillsButton: string;
+	primaryButtonIcon: LucideIcon;
+	secondaryButtonIcon: LucideIcon;
 }
 
 export interface BioBox {
@@ -28,7 +39,7 @@ export interface StatsBox {
 }
 
 export interface DailyEssential {
-	icon: string;
+	icon: LucideIcon;
 	label: string;
 	value: string;
 	percentage: number;
@@ -42,9 +53,32 @@ export interface Experience {
 	description: string;
 }
 
+export interface AboutContent {
+	title: string;
+	titleAccent: string;
+	bioIcon: LucideIcon;
+	statsIcon: LucideIcon;
+	dailyEssentialsIcon: LucideIcon;
+	workHistoryIcon: LucideIcon;
+	basedInLabel: string;
+	nameLabel: string;
+	ageLabel: string;
+	timezoneLabel: string;
+	dailyEssentialsTitle: string;
+	workHistoryTitle: string;
+}
+
 export interface SkillIcon {
 	icon: IconType;
 	language: string;
+}
+
+export interface SkillsContent {
+	title: string;
+	titleAccent: string;
+	description: string;
+	summary: string;
+	projectsButton: string;
 }
 
 export interface Project {
@@ -52,6 +86,13 @@ export interface Project {
 	title: string;
 	image: string;
 	link: string;
+}
+
+export interface ProjectsContent {
+	title: string;
+	titleAccent: string;
+	externalLinkIcon: LucideIcon;
+	items: Project[];
 }
 
 export interface SocialLink {
@@ -71,10 +112,14 @@ export interface ContactContent {
 		subjectLabel: string;
 		messageLabel: string;
 		privacyLink: string;
+		privacyConsentPrefix: string;
+		privacyLinkText: string;
 		submitButton: string;
 		submitButtonLoading: string;
 		successMessage: string;
 		errorMessage: string;
+		checkIcon: IconType;
+		emailIcon: IconType;
 	};
 	email: string;
 }
@@ -89,6 +134,65 @@ export interface FooterContent {
 	privacyText: string;
 	badge: string;
 	year: number;
+}
+
+export interface NotFoundContent {
+	code: string;
+	title: string;
+	description: string;
+	backHomeText: string;
+}
+
+export interface PrivacyPolicySection {
+	title: string;
+	intro: string;
+	list?: string[];
+	purpose: string;
+	legalBasis: string;
+	retention: string;
+}
+
+export interface PrivacyPolicyContent {
+	badge: string;
+	title: string;
+	backHomeText: string;
+	email: string;
+	controller: {
+		title: string;
+		name: string;
+		location: string;
+		emailLabel: string;
+	};
+	dataProcessing: {
+		title: string;
+		purposeLabel: string;
+		legalBasisLabel: string;
+		retentionLabel: string;
+		sections: PrivacyPolicySection[];
+	};
+	cookies: {
+		title: string;
+		intro: string;
+		description: string;
+		list: string[];
+		outro: string;
+	};
+	security: {
+		title: string;
+		description: string;
+	};
+	recipients: {
+		title: string;
+		intro: string;
+		list: string[];
+		outro: string;
+	};
+	rights: {
+		title: string;
+		intro: string;
+		list: string[];
+		outro: string;
+	};
 }
 
 export interface FormData {

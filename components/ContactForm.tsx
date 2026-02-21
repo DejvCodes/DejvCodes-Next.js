@@ -1,6 +1,5 @@
 'use client';
 import Link from 'next/link';
-import {FaEnvelope, FaCheck} from 'react-icons/fa';
 import {CONTACT_CONTENT} from '@/constants/content';
 import {useState, useEffect, FormEvent} from 'react';
 import {FormStatus, type FormData} from '@/types/types';
@@ -15,6 +14,8 @@ const initialData: FormData = {
 };
 
 const ContactForm = () => {
+	const CheckIcon = CONTACT_CONTENT.form.checkIcon;
+	const EmailIcon = CONTACT_CONTENT.form.emailIcon;
 	const [csrf, setCsrf] = useState<string>('');
 	const [status, setStatus] = useState<FormStatus>(FormStatus.IDLE);
 	const [formData, setFormData] = useState<FormData>(initialData);
@@ -79,7 +80,9 @@ const ContactForm = () => {
 
 	const inputClass = 'w-full text-base text-white bg-slate-900/50 border border-slate-700/60 rounded-xl placeholder-slate-500 focus:outline-none focus:border-light-blue focus:ring-1 focus:ring-light-blue/50 transition-all duration-200 hover:border-slate-600 autofill:bg-slate-900/50 autofill:text-white autofill:shadow-[inset_0_0_0px_1000px_rgb(15_23_42_/_0.5)] px-5 py-4';
 
-	return <div className='w-full'>
+	return <div
+		className='w-full'
+	>
 		{/* Form */}
 		<form
 			id='form'
@@ -159,14 +162,14 @@ const ContactForm = () => {
 							className='w-5 h-5 peer appearance-none bg-slate-900/50 border border-slate-700 rounded-md checked:bg-light-blue checked:border-light-blue focus:outline-none focus:ring-1 focus:ring-light-blue/50 transition-all duration-200 cursor-pointer'
 							required
 						/>
-						<FaCheck className='absolute w-3 h-3 text-slate-950 opacity-0 peer-checked:opacity-100 transition-opacity duration-200 pointer-events-none' />
+						<CheckIcon className='absolute w-3 h-3 text-slate-950 opacity-0 peer-checked:opacity-100 transition-opacity duration-200 pointer-events-none' />
 					</div>
 					<span>
-						I agree with the <Link
+						{CONTACT_CONTENT.form.privacyConsentPrefix} <Link
 							href={CONTACT_CONTENT.form.privacyLink}
 							className='text-slate-400/80 hover:text-light-blue hover:underline underline-offset-4 transition-colors'
 						>
-							Privacy Policy
+							{CONTACT_CONTENT.form.privacyLinkText}
 						</Link>
 					</span>
 				</label>
@@ -185,7 +188,7 @@ const ContactForm = () => {
 					href={`mailto:${CONTACT_CONTENT.email}`}
 					className='inline-flex items-center text-lg font-semibold text-light-blue hover:text-slate-200 transition-colors duration-200 gap-2'
 				>
-					<FaEnvelope className='w-5 h-5' />
+					<EmailIcon className='w-5 h-5' />
 					{CONTACT_CONTENT.email}
 				</Link>
 			</div>

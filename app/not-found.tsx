@@ -1,22 +1,23 @@
 import Link from 'next/link';
+import {NOT_FOUND_CONTENT} from '@/constants/content';
 
 const NotFound = () => {
 	return <div
 		className='relative min-h-dvh flex items-center justify-center bg-linear-to-b from-black via-slate-960 to-slate-950 overflow-hidden pt-7'
 	>
 		<div className='text-center px-4'>
-			<h1 className='text-9xl text-white font-bold mb-4'>404</h1>
+			<h1 className='text-9xl text-white font-bold mb-4'>{NOT_FOUND_CONTENT.code}</h1>
 			<h2 className='text-3xl md:text-4xl font-semibold text-gray-300 mb-6'>
-				Page Not Found
+				{NOT_FOUND_CONTENT.title}
 			</h2>
 			<p className='text-gray-400 text-lg mb-8'>
-				Sorry, but the page you are looking for does not exist.
+				{NOT_FOUND_CONTENT.description}
 			</p>
 			<Link
 				href='/'
 				className='inline-block bg-slate-900/50 hover:bg-slate-800 text-white font-semibold rounded-xl border border-slate-700 transition-colors duration-300 px-10 py-3'
 			>
-				Back to Home
+				{NOT_FOUND_CONTENT.backHomeText}
 			</Link>
 		</div>
 	</div>

@@ -1,11 +1,12 @@
 'use client';
 import Link from 'next/link';
-import {useState} from 'react';
 import Image from 'next/image';
+import {useState} from 'react';
 import ScrollReveal from './ScrollReveal';
-import {PROJECTS} from '../constants/content';
+import {PROJECTS_CONTENT} from '../constants/content';
 
 const Projects = () => {
+	const ExternalLinkIcon = PROJECTS_CONTENT.externalLinkIcon;
 	const [activeCard, setActiveCard] = useState<string|null>(null);
 
 	const handleCardClick = (projectId: string, e: React.MouseEvent) => {
@@ -22,14 +23,14 @@ const Projects = () => {
 			<ScrollReveal>
 				<div className='mb-7'>
 					<h2 className='text-white font-bold text-3xl md:text-4xl mb-2'>
-						Selected <span className='text-light-blue'>Works</span>
+						{PROJECTS_CONTENT.title} <span className='text-light-blue'>{PROJECTS_CONTENT.titleAccent}</span>
 					</h2>
 					<div className='w-20 h-1.5 bg-light-blue rounded-full' />
 				</div>
 			</ScrollReveal>
 
 			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8'>
-				{PROJECTS.map((project, index) => {
+				{PROJECTS_CONTENT.items.map((project, index) => {
 					const isActive = activeCard === project.id;
 
 					return (
@@ -60,9 +61,7 @@ const Projects = () => {
 											<h4 className='text-2xl font-bold text-white'>
 												{project.title}
 											</h4>
-											<svg className='w-8 h-8 transform transition-transform' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-												<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2.5} d='M7 17L17 7M17 7H7M17 7V17' />
-											</svg>
+											<ExternalLinkIcon className='w-8 h-8 transform transition-transform' />
 										</Link>
 									</div>
 								</div>
