@@ -1,7 +1,25 @@
 'use client';
 import Link from 'next/link';
-import {SKILLS_CONTENT, SKILLS_ICONS} from '@/constants/content';
 import ScrollReveal from './ScrollReveal';
+import {SKILLS_CONTENT, SKILLS_ICONS} from '@/constants/content';
+
+const HIGHLIGHTED_TECH = ['TypeScript', 'Next.js', 'React', 'Tailwind CSS', 'Vue 3', 'Nuxt 3'];
+
+const escapeRegex = (value: string) => {
+	return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+};
+
+const renderHighlightedTech = (text: string) => {
+	const regex = new RegExp(`(${HIGHLIGHTED_TECH.sort((a, b) => b.length - a.length).map(escapeRegex).join('|')})`, 'g');
+
+	return text.split(regex).map((part, index) => {
+		if (!HIGHLIGHTED_TECH.includes(part)) {
+			return part;
+		}
+
+		return <span key={`${part}-${index}`} className='text-light-blue'>{part}</span>;
+	});
+};
 
 const Skills = () => {
 	return <section
@@ -17,7 +35,7 @@ const Skills = () => {
 					</h2>
 
 					<p className='text-slate-300 md:text-lg leading-relaxed lg:max-w-xl'>
-						{SKILLS_CONTENT.description}
+						{renderHighlightedTech(SKILLS_CONTENT.description)}
 					</p>
 
 					<p className='text-sm md:text-base text-slate-500 leading-relaxed mb-4 sm:mb-5'>
