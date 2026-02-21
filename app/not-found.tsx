@@ -3,7 +3,7 @@ import {NOT_FOUND_CONTENT} from '@/constants/content';
 
 const NotFound = () => {
 	return <div
-		className='relative min-h-dvh flex items-center justify-center bg-linear-to-b from-black via-slate-960 to-slate-950 overflow-hidden pt-7'
+		className='relative min-h-svh flex items-center justify-center bg-linear-to-b from-black via-slate-960 to-slate-950 overflow-hidden pt-7'
 	>
 		<div className='text-center px-4'>
 			<h1 className='text-9xl text-white font-bold mb-4'>{NOT_FOUND_CONTENT.code}</h1>
