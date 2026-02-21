@@ -1,5 +1,12 @@
 import Link from 'next/link';
+import type {Metadata} from 'next';
 import {PRIVACY_POLICY_CONTENT} from '@/constants/content';
+
+export const metadata: Metadata = {
+	alternates: {
+		canonical: 'https://dejvcodes.com/privacy-policy/'
+	}
+};
 
 const PrivacyPolicy = () => {
 	return <main

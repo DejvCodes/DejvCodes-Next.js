@@ -1,4 +1,4 @@
-import {AboutContent, BioBox, ContactContent, DailyEssential, Experience, FooterContent, HeaderContent, HeroContent, NavLink, NotFoundContent, PrivacyPolicyContent, ProjectsContent, SkillIcon, SkillsContent, SocialLink, StatsBox} from '../types/types';
+import {AboutContent, BioBox, ContactContent, DailyEssential, Experience, FooterContent, HeaderContent, HeroContent, NavLink, NotFoundContent, PrivacyPolicyContent, ProjectsContent, SkillIcon, SkillsContent, SocialLink, StatsBox} from '@/types/types';
 
 import {
 	ArrowDown,

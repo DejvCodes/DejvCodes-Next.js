@@ -1,6 +1,7 @@
 import './globals.css';
 import {Inter} from 'next/font/google';
 import type {Metadata, Viewport} from 'next';
+import StructuredData from '@/components/StructuredData';
 
 const inter = Inter({
 	subsets: ['latin'],
@@ -91,6 +92,7 @@ const RootLayout: React.FC<{
 			<link rel='apple-touch-icon' href='/apple-touch-icon.png' sizes='180x180' type='image/png' />
 		</head>
 		<body className={`${inter.variable} antialiased`}>
+			<StructuredData />
 			{children}
 		</body>
 	</html>

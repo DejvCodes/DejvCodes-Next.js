@@ -43,9 +43,10 @@ const Projects = () => {
 								<Image
 									src={project.image}
 									alt={project.title}
-									fill
+									width={1200}
+									height={800}
 									sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
-									className='object-cover transition-transform duration-700'
+									className='w-full h-full object-cover transition-transform duration-700'
 									priority={index === 0}
 								/>
 
