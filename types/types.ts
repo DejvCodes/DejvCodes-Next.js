@@ -79,6 +79,7 @@ export interface SkillsContent {
 	description: string;
 	summary: string;
 	projectsButton: string;
+	highlightedTech: string[];
 }
 
 export interface Project {

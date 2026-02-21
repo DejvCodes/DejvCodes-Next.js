@@ -150,7 +150,8 @@ export const SKILLS_CONTENT: SkillsContent = {
 	titleAccent: 'Experience',
 	description:' I build production-ready web apps with Next.js and React, writing type-safe code with TypeScript and creating responsive UI with Tailwind CSS. I also work daily with Vue 3 and Nuxt 3 on an e-commerce app.',
 	summary: 'Every project is optimized for performance, SEO and real-world usability - delivering fast, accessible experiences that work flawlessly across all devices.',
-	projectsButton: 'View Projects'
+	projectsButton: 'View Projects',
+	highlightedTech: ['TypeScript', 'Next.js', 'React', 'Tailwind CSS', 'Vue 3', 'Nuxt 3']
 };
 
 export const PROJECTS_CONTENT: ProjectsContent = {

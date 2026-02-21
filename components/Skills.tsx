@@ -3,17 +3,16 @@ import Link from 'next/link';
 import ScrollReveal from './ScrollReveal';
 import {SKILLS_CONTENT, SKILLS_ICONS} from '@/constants/content';
 
-const HIGHLIGHTED_TECH = ['TypeScript', 'Next.js', 'React', 'Tailwind CSS', 'Vue 3', 'Nuxt 3'];
-
 const escapeRegex = (value: string) => {
 	return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 };
 
 const renderHighlightedTech = (text: string) => {
-	const regex = new RegExp(`(${HIGHLIGHTED_TECH.sort((a, b) => b.length - a.length).map(escapeRegex).join('|')})`, 'g');
+	const highlightedTech = [...SKILLS_CONTENT.highlightedTech];
+	const regex = new RegExp(`(${highlightedTech.sort((a, b) => b.length - a.length).map(escapeRegex).join('|')})`, 'g');
 
 	return text.split(regex).map((part, index) => {
-		if (!HIGHLIGHTED_TECH.includes(part)) {
+		if (!highlightedTech.includes(part)) {
 			return part;
 		}
 
