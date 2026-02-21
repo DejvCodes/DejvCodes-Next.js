@@ -67,7 +67,7 @@ const Skills = () => {
 							className='w-20 h-20 sm:w-30 sm:h-30 flex flex-col items-center justify-center text-sm text-slate-300 bg-slate-950 border border-slate-800 rounded-2xl transition-all duration-200 ease-linear hover:border-slate-700 hover:bg-slate-900/50'
 						>
 							<Icon className='text-3xl sm:text-5xl mb-2' />
-							<h4 className='text-[11px] text-sm font-medium text-center'>{icon.language}</h4>
+							<h4 className='text-[11px] sm:text-sm font-medium text-center'>{icon.language}</h4>
 						</div>
 					})}
 				</div>
