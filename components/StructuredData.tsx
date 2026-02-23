@@ -6,8 +6,8 @@ const organizationSchema = {
 	'@id': 'https://dejvcodes.com/#organization',
 	name: 'DejvCodes',
 	url: 'https://dejvcodes.com',
-	logo: 'https://dejvcodes.com/logo-300x300.png',
-	image: 'https://dejvcodes.com/og-image.png',
+	logo: 'https://dejvcodes.com/logo-1024x1024.png',
+	image: 'https://dejvcodes.com/logo-1024x1024.png',
 	email: 'info@dejvcodes.com',
 	address: {
 		'@type': 'PostalAddress',

@@ -19,6 +19,11 @@
       "src": "/logo-300x300.png",
       "sizes": "300x300",
       "type": "image/png"
+    },
+    {
+      "src": "/logo-1024x1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
     }
   ],
   "theme_color": "#000000",

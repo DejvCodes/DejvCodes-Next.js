@@ -42,3 +42,6 @@ next-env.d.ts
 
 # components
 /components/Ig.tsx
+
+# check-list
+/check-list-code.txt
