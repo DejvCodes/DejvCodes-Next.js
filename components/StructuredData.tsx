@@ -14,11 +14,6 @@ const organizationSchema = {
 		addressLocality: 'Pardubice',
 		addressCountry: 'CZ'
 	},
-	geo: {
-		'@type': 'GeoCoordinates',
-		latitude: 50.0343,
-		longitude: 15.7812
-	},
 	sameAs: [
 		'https://www.instagram.com/dejvcodes/',
 		'https://github.com/DejvCodes',
