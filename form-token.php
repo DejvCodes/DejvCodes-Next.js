@@ -1,19 +1,20 @@
 <?php
 declare(strict_types=1);
 
-// setting secure session cookie parameters
+// Configure secure session cookie settings
 session_set_cookie_params([
   'lifetime' => 0,
   'path' => '/',
-  'secure' => true,     // only over HTTPS
-  'httponly' => true,   // JS cannot access the cookie
-  'samesite' => 'Lax',  // or 'Strict' (Lax is usually more practical)
+  'secure' => true,     // send cookie only over HTTPS
+  'httponly' => true,   // prevent JavaScript access to the session cookie
+  'samesite' => 'Lax',  // helps reduce CSRF risk while keeping normal form usage practical
 ]);
 
-// preventing caching of the response
+// Prevent caching of the response
 header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
 header('Pragma: no-cache');
 header('Content-Type: application/json; charset=UTF-8');
+header('Vary: Cookie'); // response depends on the current session cookie
 
 function fail(int $code, string $msg): void {
   http_response_code($code);
@@ -21,25 +22,22 @@ function fail(int $code, string $msg): void {
   exit;
 }
 
+// Only allow GET requests for CSRF token retrieval
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'GET') {
   fail(405, 'Method not allowed');
 }
 
-// simple origin check (match host)
-$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-$host   = $_SERVER['HTTP_HOST'] ?? '';
-
-if ($origin) {
-  $originHost = parse_url($origin, PHP_URL_HOST);
-  if (!$originHost || strcasecmp($originHost, $host) !== 0) {
-    fail(403, 'Bad origin');
-  }
-}
-
+// Start or resume the current session
 session_start();
 
+// Generate a CSRF token only if it does not exist yet
 if (empty($_SESSION['csrf'])) {
-  $_SESSION['csrf'] = bin2hex(random_bytes(32));
+  session_regenerate_id(true); // refresh session ID when initializing a new session
+  $_SESSION['csrf'] = bin2hex(random_bytes(32)); // create a secure random token
 }
 
-echo json_encode(['csrf' => $_SESSION['csrf']], JSON_UNESCAPED_UNICODE);
+// Return the token as JSON
+echo json_encode([
+  'ok' => true,
+  'csrf' => $_SESSION['csrf'],
+], JSON_UNESCAPED_UNICODE);

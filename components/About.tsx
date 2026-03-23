@@ -1,12 +1,58 @@
 'use client';
 import ScrollReveal from './ScrollReveal';
+import {useEffect, useState} from 'react';
 import {ABOUT_CONTENT, BIO_BOX, STATS_BOX, DAILY_ESSENTIALS, EXPERIENCE} from '../constants/content';
+
+const getPragueOffsetInMinutes = (date: Date): number => {
+	const formatter = new Intl.DateTimeFormat('en-GB', {
+		timeZone: 'Europe/Prague',
+		year: 'numeric',
+		month: '2-digit',
+		day: '2-digit',
+		hour: '2-digit',
+		minute: '2-digit',
+		second: '2-digit',
+		hour12: false
+	});
+
+	const parts = formatter.formatToParts(date);
+	const map = Object.fromEntries(parts.filter((part) => part.type !== 'literal').map((part) => [part.type, part.value]));
+	const timestampAsPrague = Date.UTC(
+		Number(map.year),
+		Number(map.month) - 1,
+		Number(map.day),
+		Number(map.hour),
+		Number(map.minute),
+		Number(map.second)
+	);
+
+	return Math.round((timestampAsPrague - date.getTime()) / 60000);
+};
+
+const getPragueTimezoneLabel = (): string => {
+	const offsetMinutes = getPragueOffsetInMinutes(new Date());
+	const offsetHours = Math.round(offsetMinutes / 60);
+	const timezoneAbbreviation = offsetHours === 2 ? 'CEST' : 'CET';
+
+	return `${timezoneAbbreviation} (UTC+${offsetHours})`;
+};
 
 const About = () => {
 	const BioIcon = ABOUT_CONTENT.bioIcon;
 	const StatsIcon = ABOUT_CONTENT.statsIcon;
 	const DailyEssentialsIcon = ABOUT_CONTENT.dailyEssentialsIcon;
 	const WorkHistoryIcon = ABOUT_CONTENT.workHistoryIcon;
+	const [timezone, setTimezone] = useState<string>(() => getPragueTimezoneLabel());
+
+	useEffect(() => {
+		const intervalId = window.setInterval(() => {
+			setTimezone(getPragueTimezoneLabel());
+		}, 60 * 60 * 1000);
+
+		return () => {
+			window.clearInterval(intervalId);
+		};
+	}, []);
 
 	return <section
 		id='about'
@@ -32,10 +78,10 @@ const About = () => {
 								{BIO_BOX.title}
 							</h3>
 						</div>
-						<p className='text-[16.5px] text-slate-300 leading-relaxed mb-4'>
+						<p className='text-base sm:text-[16.5px] text-slate-300 leading-relaxed mb-4'>
 							{BIO_BOX.paragraphs[0]}
 						</p>
-						<p className='text-[16.5px] text-slate-300 leading-relaxed'>
+						<p className='text-base sm:text-[16.5px] text-slate-300 leading-relaxed'>
 							{BIO_BOX.paragraphs[1]}
 						</p>
 					</div>
@@ -66,7 +112,7 @@ const About = () => {
 						</div>
 						<div>
 							<p className='text-slate-500 text-sm'>{ABOUT_CONTENT.timezoneLabel}</p>
-							<p className='text-white font-mono'>{STATS_BOX.timezone}</p>
+							<p className='text-white font-mono'>{timezone}</p>
 						</div>
 					</div>
 				</ScrollReveal>

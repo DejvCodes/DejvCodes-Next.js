@@ -2,11 +2,12 @@ RewriteEngine On
 
 # Security Headers
 <IfModule mod_headers.c>
-  Header set X-Content-Type-Options "nosniff"
-  Header set X-Frame-Options "SAMEORIGIN"
-  Header set X-XSS-Protection "1; mode=block"
-  Header set Referrer-Policy "strict-origin-when-cross-origin"
-  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
 </IfModule>
 
 # PHP form endpoints - žádná cache
@@ -18,27 +19,37 @@ RewriteEngine On
   </IfModule>
 </FilesMatch>
 
-# 1) Canonical: www.dejvcodes.com -> dejvcodes.com (rovnou na https)
+# 1) Blokace nevalidniho Host headeru
+RewriteCond %{HTTP_HOST} !^[A-Za-z0-9.-]+$ [NC]
+RewriteRule ^ - [F,L]
+
+# 2) Canonical: www.dejvcodes.com -> dejvcodes.com (rovnou na https)
 RewriteCond %{HTTP_HOST} ^www\.dejvcodes\.com$ [NC]
 RewriteRule ^ https://dejvcodes.com%{REQUEST_URI} [R=301,L]
 
-# 2) Force HTTPS pro vše ostatní
+# 3) Canonical host na HTTPS
+RewriteCond %{HTTP_HOST} ^dejvcodes\.com$ [NC]
 RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://dejvcodes.com%{REQUEST_URI} [R=301,L]
+
+# 4) Force HTTPS pro ostatni validni hosty
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_HOST} ^[A-Za-z0-9.-]+$ [NC]
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-# 3) Cele domeny (aliasy) -> /domains/<whole-host>/
+# 5) Cele domeny (aliasy) -> /domains/<whole-host>/
 RewriteCond %{REQUEST_URI} !^/domains/ [NC]
 RewriteCond %{HTTP_HOST} ^(www\.)?(.+)$ [NC]
 RewriteCond %{DOCUMENT_ROOT}/domains/%2 -d
 RewriteRule ^(.*)$ domains/%2/$1 [DPI,L]
 
-# 4) Subdomeny -> /subdom/<subdomain>/
+# 6) Subdomeny -> /subdom/<subdomain>/
 RewriteCond %{REQUEST_URI} !^/subdom/ [NC]
 RewriteCond %{HTTP_HOST} ^(www\.)?([^.]+)\.[^.]+\.[^.]+$ [NC]
 RewriteCond %{DOCUMENT_ROOT}/subdom/%2 -d
 RewriteRule ^(.*)$ subdom/%2/$1 [DPI,L]
 
-# 5) Trailing slash pro adresare (obecne)
+# 7) Trailing slash pro adresare (obecne)
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !/$
 RewriteRule ^ %{REQUEST_URI}/ [R=301,L]

@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
+import {useState, useEffect} from 'react';
 import {CONTACT_CONTENT} from '@/constants/content';
-import {useState, useEffect, FormEvent} from 'react';
 import {FormStatus, type FormData} from '@/types/types';
 
 const initialData: FormData = {
@@ -16,26 +16,37 @@ const initialData: FormData = {
 const ContactForm = () => {
 	const CheckIcon = CONTACT_CONTENT.form.checkIcon;
 	const EmailIcon = CONTACT_CONTENT.form.emailIcon;
+
 	const [csrf, setCsrf] = useState<string>('');
 	const [status, setStatus] = useState<FormStatus>(FormStatus.IDLE);
 	const [formData, setFormData] = useState<FormData>(initialData);
 	const [responseMessage, setResponseMessage] = useState<string>('');
 
+	const fetchCsrfToken = async () => {
+		const res = await fetch('/form-token.php', {
+			method: 'GET',
+			credentials: 'same-origin',
+		});
+
+		const data = await res.json();
+
+		if (!data?.csrf) {
+			throw new Error('CSRF token not returned');
+		}
+
+		setCsrf(data.csrf);
+	};
+
 	useEffect(() => {
-		// fetch CSRF token on component mount
-		fetch('/form-token.php')
-			.then(res => res.json())
-			.then(data => setCsrf(data.csrf))
-			.catch(() => setStatus(FormStatus.ERROR));
+		// Fetch CSRF token on component mount
+		fetchCsrfToken().catch(() => setStatus(FormStatus.ERROR));
 	}, []);
 
-	// handle form submission
-	const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-		event.preventDefault(); // prevent default form submission
-		setStatus(FormStatus.LOADING); // set loading state
-		setResponseMessage(''); // clear previous messages
+	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		setStatus(FormStatus.LOADING);
+		setResponseMessage('');
 
-		// prepare form data for submission
 		const formBody = new FormData();
 		formBody.append('inputName', formData.name);
 		formBody.append('inputEmail', formData.email);
@@ -46,33 +57,31 @@ const ContactForm = () => {
 		formBody.append('csrf', csrf);
 
 		try {
-			// send form data to the server
 			const res = await fetch('/form.php', {
 				method: 'POST',
 				body: formBody,
+				credentials: 'same-origin',
 			});
 
-			// parse response from the server
 			const data = await res.json();
 
 			if (data.ok) {
-				// if submission is successful, show success message and reset form
 				setStatus(FormStatus.SUCCESS);
 				setResponseMessage(data.message);
 				setFormData(initialData);
+
+				// Fetch a fresh CSRF token after successful submission
+				await fetchCsrfToken();
 			} else {
-				// if submission fails, show error message
 				setStatus(FormStatus.ERROR);
-				setResponseMessage(data.message);
+				setResponseMessage(data.message || CONTACT_CONTENT.form.errorMessage);
 			}
 		} catch {
-			// handle network or unexpected errors
 			setStatus(FormStatus.ERROR);
 			setResponseMessage(CONTACT_CONTENT.form.errorMessage);
 		}
 
 		setTimeout(() => {
-			// reset status and clear response message
 			setResponseMessage('');
 			setStatus(FormStatus.IDLE);
 		}, 3500);
@@ -83,7 +92,6 @@ const ContactForm = () => {
 	return <div
 		className='w-full'
 	>
-		{/* Form */}
 		<form
 			id='form'
 			onSubmit={handleSubmit}
@@ -137,7 +145,6 @@ const ContactForm = () => {
 						required
 					/>
 				</div>
-				{/* Honeypot Field */}
 				<input
 					id='website'
 					type='text'
@@ -164,8 +171,10 @@ const ContactForm = () => {
 						/>
 						<CheckIcon className='absolute w-3 h-3 text-slate-950 opacity-0 peer-checked:opacity-100 transition-opacity duration-200 pointer-events-none' />
 					</div>
+
 					<span>
-						{CONTACT_CONTENT.form.privacyConsentPrefix} <Link
+						{CONTACT_CONTENT.form.privacyConsentPrefix}{' '}
+						<Link
 							href={CONTACT_CONTENT.form.privacyLink}
 							className='text-slate-400/80 hover:text-light-blue hover:underline underline-offset-4 transition-colors'
 						>
@@ -181,7 +190,9 @@ const ContactForm = () => {
 					disabled={status === FormStatus.LOADING}
 					className='w-full sm:w-auto flex items-center justify-center bg-light-blue text-slate-950 font-semibold rounded-xl hover:bg-slate-200 transition-all gap-2 px-8 py-3 group cursor-pointer'
 				>
-					{status === FormStatus.LOADING ? CONTACT_CONTENT.form.submitButtonLoading : CONTACT_CONTENT.form.submitButton}
+					{status === FormStatus.LOADING
+						? CONTACT_CONTENT.form.submitButtonLoading
+						: CONTACT_CONTENT.form.submitButton}
 				</button>
 
 				<Link
@@ -193,11 +204,10 @@ const ContactForm = () => {
 				</Link>
 			</div>
 
-			{/* Response Message */}
 			{responseMessage && (
 				<div
 					className={`text-center font-medium rounded-xl animate-in fade-in slide-in-from-bottom-3 mt-6 p-3 duration-500
-						${status === FormStatus.SUCCESS
+							${status === FormStatus.SUCCESS
 							? 'bg-green-500/15 border border-green-500/40 text-green-400 shadow-[0_0_20px_rgba(34,197,94,0.5)]'
 							: 'bg-red-500/15 border border-red-500/40 text-red-400 shadow-[0_0_20px_rgba(239,68,68,0.5)]'
 						}`}
