@@ -94,7 +94,7 @@ export const STATS_BOX: StatsBox = {
 	location: 'Pardubice, Czechia',
 	name: 'David Kalmus',
 	age: `${age} years`,
-	timezone: 'CET (UTC+1)'
+	timezone: 'Europe/Prague'
 };
 
 export const DAILY_ESSENTIALS: DailyEssential[] = [
